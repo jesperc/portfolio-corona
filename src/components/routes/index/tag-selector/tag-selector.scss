@@ -1,0 +1,15 @@
+.tag-selector {
+  border: 2px solid green;
+}
+
+.tag {
+  border: 1px solid black;
+}
+
+.selected {
+  font-weight: bold;
+}
+
+.tag:hover {
+  cursor: pointer;
+}

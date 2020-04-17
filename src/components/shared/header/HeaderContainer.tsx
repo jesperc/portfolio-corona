@@ -1,16 +1,13 @@
 import React from 'react'
-import MenuContainer from './menu/MenuContainer'
-import getDb from '../../db/getDb'
+import './header.scss'
 
 export interface HeaderContainerProps {}
 
 const HeaderContainer: React.FC<HeaderContainerProps> = ({}) => {
-  const { name, title } = getDb()
   return (
     <div className="header">
-      <h1>{name}</h1>
-      <h2>{title}</h2>
-      <MenuContainer />
+      <h1>Jesper Corell</h1>
+      <h2>System Developer</h2>
     </div>
   )
 }

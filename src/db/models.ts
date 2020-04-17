@@ -1,6 +1,4 @@
-export type Db = {
-  name: string
-  title: string
+export type Data = {
   projects: Project[]
   tags: Tag[]
 }
@@ -11,11 +9,13 @@ export type Link = {
 }
 
 export type Tag = {
-  type: TagType
+  id: TagId
   name: string
+  sortOrder: number
 }
 
-export enum TagType {
+export enum TagId {
+  showAll,
   dotNet,
   dotNetCore,
   react,
@@ -23,31 +23,29 @@ export enum TagType {
   vue,
   typeScript,
   javaScript,
-  angular,
   sqlServer,
   redux,
   nodeJs,
   javaSe,
-  postgreSql,
   android,
 }
 
 export type Project = {
-  type: ProjectType
+  id: ProjectId
   title: string
   description: string
   technicalDescription: string
   technologies: string[]
   links: Link[]
   images: string[]
+  thumbnail: string
   tags: Tag[]
   duration: string
 }
 
-export enum ProjectType {
+export enum ProjectId {
   academicWork,
   myBazar,
-  hockeymagasinet,
   highCoastWhisky,
   thorengruppen,
   agency9,
