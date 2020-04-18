@@ -1,6 +1,24 @@
 @import '../../../style/constants.scss';
 
+$menuPadding: 10px;
+$menuPaddingLeft: 14px;
+
 .menu {
+  background-color: #3c3c3c;
   padding-left: $padding;
-  border: 2px solid brown;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  cursor: pointer;
+  display: inline-block;
+  padding: $menuPadding $menuPaddingLeft $menuPadding $menuPaddingLeft;
+}
+
+.menu li:hover {
+  background-color: #505050;
 }

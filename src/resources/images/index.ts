@@ -1,5 +1,5 @@
-import cvIconPng from './cv-icon.png'
 import homeIconPng from './home-icon.png'
+import resumeIconPng from './resume-icon.png'
 
-export const cvIcon = cvIconPng
+export const resumeIcon = resumeIconPng
 export const homeIcon = homeIconPng
