@@ -1,3 +1,6 @@
+@import '../../../style/constants.scss';
+
 .menu {
+  padding-left: $padding;
   border: 2px solid brown;
 }

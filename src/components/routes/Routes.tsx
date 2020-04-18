@@ -10,22 +10,20 @@ import Menu from '../shared/menu'
 const Routes = () => {
   return (
     <Router>
-      <div className="app">
-        <Header />
-        <Menu />
-        <Switch>
-          <Route path="/project/:id">
-            <Project />
-          </Route>
-          <Route path="/resume">
-            <Resume />
-          </Route>
-          <Route path="/">
-            <Gallery />
-          </Route>
-        </Switch>
-        <Footer />
-      </div>
+      <Header />
+      <Menu />
+      <Switch>
+        <Route path="/project/:id">
+          <Project />
+        </Route>
+        <Route path="/resume">
+          <Resume />
+        </Route>
+        <Route path="/">
+          <Gallery />
+        </Route>
+      </Switch>
+      <Footer />
     </Router>
   )
 }
