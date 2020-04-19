@@ -50,7 +50,7 @@ const seedData = (): Data => {
           TagId.redux,
         ].includes(tag.id)
       ),
-      duration: '2 years',
+      duration: 'Ongoing',
       thumbnail: projectAcademicWorkThumbnailImage,
       sortOrder: 0,
     } as Project,
@@ -70,7 +70,7 @@ const seedData = (): Data => {
           TagId.typeScript,
         ].includes(tag.id)
       ),
-      duration: '2 years',
+      duration: '3 months',
       thumbnail: projectMyBazarThumbnailImage,
       sortOrder: 1,
     } as Project,
@@ -78,14 +78,14 @@ const seedData = (): Data => {
       id: ProjectId.hockeyMagasinet,
       title: 'Hockeymagasinet',
       description: 'desc',
-      technicalDescription: 'tech desc',
+      technicalDescription: '1 month',
       technologies: ['React 15'],
       links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
       images: [''],
       tags: tags.filter((tag) =>
         [TagId.angular, TagId.nodeJs, TagId.typeScript].includes(tag.id)
       ),
-      duration: '2 years',
+      duration: '1 month',
       thumbnail: projectHockeymagasinetThumbnailImageImage,
       sortOrder: 2,
     } as Project,
@@ -106,7 +106,7 @@ const seedData = (): Data => {
           TagId.postgreSql,
         ].includes(tag.id)
       ),
-      duration: '2 years',
+      duration: '5 months',
       thumbnail: projectHighCoastWhiskyThumbnailImageImage,
       sortOrder: 3,
     } as Project,
@@ -119,11 +119,15 @@ const seedData = (): Data => {
       links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
       images: [''],
       tags: tags.filter((tag) =>
-        [TagId.dotNet, TagId.jQuery, TagId.sqlServer, TagId.android].includes(
-          tag.id
-        )
+        [
+          TagId.dotNet,
+          TagId.jQuery,
+          TagId.javaScript,
+          TagId.sqlServer,
+          TagId.android,
+        ].includes(tag.id)
       ),
-      duration: '2 years',
+      duration: '1 year, 7 months',
       thumbnail: projectThorengruppenThumbnailImageImage,
       sortOrder: 4,
     } as Project,
@@ -135,8 +139,10 @@ const seedData = (): Data => {
       technologies: ['React 15'],
       links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
       images: [''],
-      tags: tags.filter((tag) => [TagId.javaSe, TagId.GWT].includes(tag.id)),
-      duration: '2 years',
+      tags: tags.filter((tag) =>
+        [TagId.javaSe, TagId.GWT, TagId.javaScript].includes(tag.id)
+      ),
+      duration: '7 months',
       thumbnail: projectAgency9ThumbnailImageImage,
       sortOrder: 5,
     } as Project,

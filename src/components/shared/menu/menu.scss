@@ -18,12 +18,12 @@ $hoverColor: #505050;
   cursor: pointer;
   display: inline-block;
   padding: $menuPadding $menuPaddingLeft $menuPadding $menuPaddingLeft;
+
+  &:hover {
+    background-color: $hoverColor;
+  }
 }
 
 .menu-active {
-  background-color: $hoverColor;
-}
-
-.menu li:hover {
   background-color: $hoverColor;
 }

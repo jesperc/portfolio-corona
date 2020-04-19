@@ -13,15 +13,15 @@
   font-weight: bold;
   color: $tagTextColor;
   box-shadow: $shadow;
-  text-shadow: 0 2px 2px #1a1a1a;
+  text-shadow: $textShadow;
+
+  &:hover {
+    background-color: $tagHoverColor;
+    cursor: pointer;
+  }
 }
 
 .tag-selected {
   font-weight: bold;
-  background-color: $tagHoverColor;
-}
-
-.tag:hover {
-  cursor: pointer;
   background-color: $tagHoverColor;
 }

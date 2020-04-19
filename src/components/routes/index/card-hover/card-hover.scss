@@ -15,7 +15,7 @@ $hoverTagMargin: calc(#{$paddingHalf} / 3);
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  transform: translateY(8vh);
+  transform: translateY(9vh);
 }
 
 .card-hover-tag {
@@ -25,6 +25,6 @@ $hoverTagMargin: calc(#{$paddingHalf} / 3);
   font-weight: bold;
   color: $tagTextColor;
   box-shadow: $shadow;
-  text-shadow: 0 2px 2px #1a1a1a;
+  text-shadow: $textShadow;
   font-size: 14px;
 }

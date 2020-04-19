@@ -9,6 +9,7 @@ export interface CardContainerProps {
   tags: Tag[]
   image: string
   id: ProjectId
+  duration: string
 }
 
 const hiddenStyle: CSSProperties = {
@@ -20,6 +21,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
   tags,
   image,
   id,
+  duration,
 }) => {
   const [hover, setHover] = useState(false)
 
@@ -31,6 +33,9 @@ const CardContainer: React.FC<CardContainerProps> = ({
       onMouseLeave={() => setHover(false)}
     >
       {hover && <CardHover tags={tags.map((tag) => tag.name)} />}
+      <div className="card-title">
+        <div className="card-title-text">{`${title} (${duration})`}</div>
+      </div>
       <Link to={`/project/${id}`}>
         <img src={image} width="305px" height="199px" />
       </Link>

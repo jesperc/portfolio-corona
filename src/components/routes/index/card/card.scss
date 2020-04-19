@@ -3,6 +3,24 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: $padding;
-  width: 305px;
-  height: 199px;
+  width: $thumbnailWidth;
+  height: $thumbnailHeight;
+}
+
+.card-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-title-text {
+  position: absolute;
+  width: calc(#{$thumbnailWidth} - #{$padding});
+  padding: 6px;
+  background-color: rgba(#283b47, 0.8);
+  margin-top: calc(#{$paddingHalf} / 2);
+  color: $tagTextColor;
+  box-shadow: $shadow;
+  font-size: 16px;
+  cursor: pointer;
 }

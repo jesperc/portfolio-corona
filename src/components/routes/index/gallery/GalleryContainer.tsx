@@ -26,13 +26,19 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({}) => {
   const dispatch = useDispatch()
 
   const onSelectTag = (type: TagId) => {
-    let tags
+    let tags = [...selectedTags]
     if (type === TagId.showAll) {
       tags = [TagId.showAll]
+    } else if (type === TagId.typeScript && !selectedTags.includes(type)) {
+      tags.push(type)
+      if (!selectedTags.includes(TagId.javaScript)) {
+        tags.push(TagId.javaScript)
+      }
+      tags = tags.filter((tag) => tag !== TagId.showAll)
     } else if (selectedTags.includes(type)) {
-      tags = [...selectedTags].filter((tag) => tag !== type)
+      tags = tags.filter((tag) => tag !== type)
     } else {
-      tags = [...selectedTags, type].filter((tag) => tag !== TagId.showAll)
+      tags = [...tags, type].filter((tag) => tag !== TagId.showAll)
     }
     setSelectedTags(tags)
   }
