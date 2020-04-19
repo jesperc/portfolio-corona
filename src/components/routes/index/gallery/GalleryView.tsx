@@ -10,26 +10,30 @@ export interface GalleryViewProps {
   projects: Project[]
   selectedTags: TagId[]
   onSelectTag: Function
+  tags: Tag[]
 }
 
 const GalleryView: React.FC<GalleryViewProps> = ({
   selectedTags,
   onSelectTag,
   projects,
+  tags,
 }) => {
   return (
     <div className="gallery">
-      <h3>Work</h3>
-      <TagSelector selected={selectedTags} onClick={onSelectTag} />
-      {projects.map((project: Project) => (
-        <Card
-          key={`card${project.id}`}
-          title={project.title}
-          tags={project.tags}
-          image={project.thumbnail}
-          id={project.id}
-        />
-      ))}
+      <h3>Projects</h3>
+      <TagSelector selected={selectedTags} onClick={onSelectTag} tags={tags} />
+      <div className="cards">
+        {projects.map((project: Project) => (
+          <Card
+            key={`card${project.id}`}
+            title={project.title}
+            tags={project.tags}
+            image={project.thumbnail}
+            id={project.id}
+          />
+        ))}
+      </div>
     </div>
   )
 }

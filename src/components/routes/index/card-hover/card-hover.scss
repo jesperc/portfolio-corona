@@ -1,0 +1,30 @@
+@import '../../../../style/constants.scss';
+
+$hoverTagMargin: calc(#{$paddingHalf} / 3);
+
+.card-hover {
+  position: absolute;
+  pointer-events: none;
+  width: 305px;
+  height: 199px;
+  background-color: rgba(black, 0.7);
+  text-align: center;
+}
+
+.card-hover-tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  transform: translateY(8vh);
+}
+
+.card-hover-tag {
+  padding: 6px;
+  background-color: $tagHoverColor;
+  margin: $hoverTagMargin;
+  font-weight: bold;
+  color: $tagTextColor;
+  box-shadow: $shadow;
+  text-shadow: 0 2px 2px #1a1a1a;
+  font-size: 14px;
+}

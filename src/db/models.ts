@@ -28,6 +28,11 @@ export enum TagId {
   nodeJs,
   javaSe,
   android,
+  angular,
+  mobX,
+  postgreSql,
+  jQuery,
+  GWT,
 }
 
 export type Project = {
@@ -41,11 +46,13 @@ export type Project = {
   thumbnail: string
   tags: Tag[]
   duration: string
+  sortOrder: number
 }
 
 export enum ProjectId {
   academicWork,
   myBazar,
+  hockeyMagasinet,
   highCoastWhisky,
   thorengruppen,
   agency9,

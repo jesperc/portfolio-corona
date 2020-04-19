@@ -1,3 +1,14 @@
+@import '../../../../style/constants.scss';
+
 .gallery {
-  border: 2px solid yellow;
+  padding: $padding;
+}
+
+.cards {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: $paddingHalf;
 }

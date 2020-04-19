@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Tag, ProjectId } from '../../../../db/models'
 import './card.scss'
 import { Link } from 'react-router-dom'
+import CardHover from '../card-hover'
 
 export interface CardContainerProps {
   title: string
@@ -16,10 +17,19 @@ const CardContainer: React.FC<CardContainerProps> = ({
   image,
   id,
 }) => {
+  const [hover, setHover] = useState(false)
+
   return (
-    <Link to={`/project/${id}`}>
-      <div className="card">{title}</div>
-    </Link>
+    <div
+      className="card"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {hover && <CardHover tags={tags.map((tag) => tag.name)} />}
+      <Link to={`/project/${id}`}>
+        <img src={image} width="305px" height="199px" />
+      </Link>
+    </div>
   )
 }
 

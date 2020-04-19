@@ -2,6 +2,7 @@
 
 $menuPadding: 10px;
 $menuPaddingLeft: 14px;
+$hoverColor: #505050;
 
 .menu {
   background-color: #3c3c3c;
@@ -19,6 +20,10 @@ $menuPaddingLeft: 14px;
   padding: $menuPadding $menuPaddingLeft $menuPadding $menuPaddingLeft;
 }
 
+.menu-active {
+  background-color: $hoverColor;
+}
+
 .menu li:hover {
-  background-color: #505050;
+  background-color: $hoverColor;
 }

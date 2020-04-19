@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './menu.scss'
 import { resumeIcon, homeIcon } from '../../../resources/images'
@@ -10,19 +10,26 @@ const linkStyle = {
   textDecoration: 'inherit',
 }
 
+const RESUME_PATH = '/resume'
+const HOME_PATH = '/'
+
 const MenuContainer: React.FC<MenuContainerProps> = ({}) => {
+  const [activePath, setActivePath] = useState('/')
+
+  const renderListItem = (path: string, icon: string): JSX.Element => {
+    return (
+      <Link to={path} style={linkStyle} onClick={() => setActivePath(path)}>
+        <li className={activePath === path ? 'menu-active' : ''}>
+          <img src={icon} width="20px" height="20px" />
+        </li>
+      </Link>
+    )
+  }
+
   return (
     <ul className="menu">
-      <li>
-        <Link to={'/'} style={linkStyle}>
-          <img src={homeIcon} width="20px" height="20px" />
-        </Link>
-      </li>
-      <li>
-        <Link to={'/resume'} style={linkStyle}>
-          <img src={resumeIcon} width="20px" height="20px" />
-        </Link>
-      </li>
+      {renderListItem(HOME_PATH, homeIcon)}
+      {renderListItem(RESUME_PATH, resumeIcon)}
     </ul>
   )
 }

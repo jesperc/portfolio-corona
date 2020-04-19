@@ -12,11 +12,15 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({}) => {
   const dispatch = useDispatch()
 
   const onSelectTag = (type: TagId) => {
-    if (selectedTags.includes(type)) {
-      setSelectedTags([...selectedTags].filter((tag) => tag !== type))
+    let tags
+    if (type === TagId.showAll) {
+      tags = [TagId.showAll]
+    } else if (selectedTags.includes(type)) {
+      tags = [...selectedTags].filter((tag) => tag !== type)
     } else {
-      setSelectedTags([...selectedTags, type])
+      tags = [...selectedTags, type].filter((tag) => tag !== TagId.showAll)
     }
+    setSelectedTags(tags)
   }
 
   useEffect(() => {
@@ -24,22 +28,28 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({}) => {
   }, [])
 
   // get projects by selected tags
-  const projects = useSelector(
-    (state: RootState) => state.projects
-  ).filter((project: Project) =>
-    project.tags
-      .map((tag: Tag) => tag.id)
-      .some(
-        (type: TagId) =>
-          selectedTags.includes(type) || selectedTags.includes(TagId.showAll)
-      )
-  )
+  const projects = useSelector((state: RootState) => state.projects)
+    .filter((project: Project) =>
+      project.tags
+        .map((tag: Tag) => tag.id)
+        .some(
+          (type: TagId) =>
+            selectedTags.includes(type) || selectedTags.includes(TagId.showAll)
+        )
+    )
+    .sort((a: Project, b: Project) => (a.sortOrder > b.sortOrder ? 1 : -1))
+
+  // get and sort all tags based on sort order.
+  const tags: Tag[] = useSelector(
+    (state: RootState) => state.tags
+  ).sort((a: Tag, b: Tag) => (a.sortOrder > b.sortOrder ? 1 : -1))
 
   return (
     <GalleryView
       selectedTags={selectedTags}
       onSelectTag={onSelectTag}
       projects={projects}
+      tags={tags}
     />
   )
 }

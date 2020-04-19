@@ -1,15 +1,27 @@
+@import '../../../../style/constants.scss';
+
 .tag-selector {
-  border: 2px solid green;
+  margin-top: $padding;
 }
 
 .tag {
-  border: 1px solid black;
+  display: inline-block;
+  padding: $paddingHalf;
+  margin-right: $paddingHalf;
+  margin-bottom: $paddingHalf;
+  background-color: $tagColor;
+  font-weight: bold;
+  color: $tagTextColor;
+  box-shadow: $shadow;
+  text-shadow: 0 2px 2px #1a1a1a;
 }
 
-.selected {
+.tag-selected {
   font-weight: bold;
+  background-color: $tagHoverColor;
 }
 
 .tag:hover {
   cursor: pointer;
+  background-color: $tagHoverColor;
 }
