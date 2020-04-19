@@ -3,8 +3,6 @@ import TagSelector from '../tag-selector'
 import Card from '../card'
 import { TagId, Project, Tag } from '../../../../db/models'
 import './gallery.scss'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../../../redux/reducers'
 
 export interface GalleryViewProps {
   projects: Project[]

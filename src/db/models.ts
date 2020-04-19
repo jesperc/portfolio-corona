@@ -56,4 +56,5 @@ export enum ProjectId {
   highCoastWhisky,
   thorengruppen,
   agency9,
+  hidden,
 }

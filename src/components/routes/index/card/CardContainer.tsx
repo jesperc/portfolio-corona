@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, CSSProperties } from 'react'
 import { Tag, ProjectId } from '../../../../db/models'
 import './card.scss'
 import { Link } from 'react-router-dom'
@@ -11,6 +11,10 @@ export interface CardContainerProps {
   id: ProjectId
 }
 
+const hiddenStyle: CSSProperties = {
+  visibility: 'hidden',
+}
+
 const CardContainer: React.FC<CardContainerProps> = ({
   title,
   tags,
@@ -21,6 +25,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
 
   return (
     <div
+      style={title.length ? {} : hiddenStyle}
       className="card"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

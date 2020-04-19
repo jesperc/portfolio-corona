@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import './menu.scss'
 import { resumeIcon, homeIcon } from '../../../resources/images'
 
 export interface MenuContainerProps {}
 
-const linkStyle = {
+const linkStyle: CSSProperties = {
   color: 'inherit',
   textDecoration: 'inherit',
 }

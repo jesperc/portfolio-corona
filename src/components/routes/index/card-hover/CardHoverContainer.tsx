@@ -10,7 +10,9 @@ const CardHoverContainer: React.FC<CardHoverProps> = ({ tags }) => {
     <div className="card-hover">
       <div className="card-hover-tags">
         {tags.map((tag) => (
-          <span className="card-hover-tag">{tag}</span>
+          <span key={`card-hover-${tag}`} className="card-hover-tag">
+            {tag}
+          </span>
         ))}
       </div>
     </div>
