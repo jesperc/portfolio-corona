@@ -7,20 +7,20 @@ $hoverColor: #505050;
 .menu {
   background-color: #3c3c3c;
   padding-left: $padding;
-}
 
-.menu ul {
-  margin: 0;
-  padding: 0;
-}
+  ul {
+    margin: 0;
+    padding: 0;
+  }
 
-.menu li {
-  cursor: pointer;
-  display: inline-block;
-  padding: $menuPadding $menuPaddingLeft $menuPadding $menuPaddingLeft;
+  li {
+    cursor: pointer;
+    display: inline-block;
+    padding: $menuPadding $menuPaddingLeft $menuPadding $menuPaddingLeft;
 
-  &:hover {
-    background-color: $hoverColor;
+    &:hover {
+      background-color: $hoverColor;
+    }
   }
 }
 

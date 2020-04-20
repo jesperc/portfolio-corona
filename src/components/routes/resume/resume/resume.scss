@@ -1,0 +1,28 @@
+@import '../../../../style/constants.scss';
+
+.resume {
+  margin: $padding;
+
+  img {
+    padding-right: $paddingHalf;
+    transform: translateY(4px);
+  }
+
+  a {
+    color: $textColor;
+  }
+
+  h3 {
+    margin-bottom: $paddingHalf;
+  }
+
+  .links {
+    margin-top: $padding;
+    margin-bottom: $padding;
+
+    p {
+      margin-top: $paddingHalf;
+      margin-bottom: $paddingHalf;
+    }
+  }
+}
