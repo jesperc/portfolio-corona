@@ -33,11 +33,11 @@ const CardContainer: React.FC<CardContainerProps> = ({
       onMouseLeave={() => setHover(false)}
     >
       {hover && <CardHover tags={tags.map((tag) => tag.name)} />}
-      <div className="card-title">
-        <div className="card-title-text">{`${title} (${duration})`}</div>
+      <div className="title">
+        <div className="text">{`${title} (${duration})`}</div>
       </div>
       <Link to={`/project/${id}`}>
-        <img src={image} width="305px" height="199px" />
+        <img alt="card" src={image} width="305px" height="199px" />
       </Link>
     </div>
   )

@@ -1,9 +1,7 @@
 import React from 'react'
 import './header.scss'
 
-export interface HeaderContainerProps {}
-
-const HeaderContainer: React.FC<HeaderContainerProps> = ({}) => {
+const HeaderContainer: React.FC = () => {
   return (
     <div className="header">
       <h1>Jesper Corell</h1>

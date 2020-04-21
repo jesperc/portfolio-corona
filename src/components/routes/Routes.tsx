@@ -6,23 +6,31 @@ import Footer from '../shared/footer'
 import Gallery from './index/gallery'
 import Resume from './resume/resume'
 import Menu from '../shared/menu'
+import PageNotFound from './page-not-found'
+import Loader from '../shared/loader'
 
 const Routes = () => {
   return (
     <Router>
+      <Loader />
       <Header />
       <Menu />
+
       <Switch>
-        <Route path="/project/:id">
+        <Route exact path="/project/:id">
           <Project />
         </Route>
-        <Route path="/resume">
+        <Route exact path="/resume">
           <Resume />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Gallery />
         </Route>
+        <Route>
+          <PageNotFound />
+        </Route>
       </Switch>
+
       <Footer />
     </Router>
   )

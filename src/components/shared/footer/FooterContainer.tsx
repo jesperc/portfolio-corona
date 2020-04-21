@@ -1,9 +1,7 @@
 import React from 'react'
 import './footer.scss'
 
-export interface FooterContainerProps {}
-
-const FooterContainer: React.FC<FooterContainerProps> = ({}) => {
+const FooterContainer: React.FC = () => {
   const copyrightSymbol = '\u00a9'
   const fullYear = new Date().getFullYear()
 

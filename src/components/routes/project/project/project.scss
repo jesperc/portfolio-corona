@@ -1,0 +1,29 @@
+@import '../../../../style/constants.scss';
+
+.project {
+  h3 {
+    margin: $padding;
+  }
+
+  h4 {
+    margin: $padding;
+    padding: calc(#{$paddingHalf} * 0.6);
+    background-color: rgba(#283b47, 0.8);
+    color: $tagTextColor;
+    box-shadow: $shadow;
+    font-weight: bold;
+  }
+
+  p {
+    margin: $padding;
+  }
+
+  a {
+    color: $textColor;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

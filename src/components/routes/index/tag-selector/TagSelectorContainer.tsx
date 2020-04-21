@@ -18,7 +18,7 @@ const TagSelectorContainer: React.FC<TagSelectorContainerProps> = ({
       {tags.map((tag: Tag) => (
         <div
           key={`tag${tag.id}`}
-          className={`tag ${selected.includes(tag.id) ? 'tag-selected' : ''}`}
+          className={`tag ${selected.includes(tag.id) ? 'selected' : ''}`}
           onClick={() => onClick(tag.id)}
         >
           {tag.name}

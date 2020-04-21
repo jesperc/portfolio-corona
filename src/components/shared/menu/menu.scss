@@ -17,14 +17,15 @@ $hoverColor: #505050;
   li {
     cursor: pointer;
     display: inline-block;
-    padding: $menuPadding $menuPaddingLeft $menuPadding $menuPaddingLeft;
+    padding: $menuPadding $menuPaddingLeft calc(#{$menuPadding} * 0.4)
+      $menuPaddingLeft;
 
     &:hover {
       background-color: $hoverColor;
     }
   }
-}
 
-.menu-active {
-  background-color: $hoverColor;
+  .active {
+    background-color: $hoverColor;
+  }
 }

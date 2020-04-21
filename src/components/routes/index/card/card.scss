@@ -5,22 +5,22 @@
   margin-bottom: $padding;
   width: $thumbnailWidth;
   height: $thumbnailHeight;
-}
 
-.card-title {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
+  .title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 
-.card-title-text {
-  position: absolute;
-  width: calc(#{$thumbnailWidth} - #{$padding});
-  padding: 6px;
-  background-color: rgba(#283b47, 0.8);
-  margin-top: calc(#{$paddingHalf} / 2);
-  color: $tagTextColor;
-  box-shadow: $shadow;
-  font-size: 16px;
-  cursor: pointer;
+    .text {
+      position: absolute;
+      width: calc(#{$thumbnailWidth} - #{$padding});
+      padding: calc(#{$paddingHalf} * 0.6);
+      background-color: rgba(#283b47, 0.8);
+      margin-top: calc(#{$paddingHalf} / 2);
+      color: $tagTextColor;
+      box-shadow: $shadow;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
 }

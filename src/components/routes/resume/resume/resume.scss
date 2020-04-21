@@ -3,11 +3,6 @@
 .resume {
   margin: $padding;
 
-  img {
-    padding-right: $paddingHalf;
-    transform: translateY(4px);
-  }
-
   a {
     color: $textColor;
     text-decoration: none;
@@ -21,6 +16,16 @@
     margin-bottom: $padding;
   }
 
+  h4 {
+    padding: calc(#{$paddingHalf} * 0.6);
+    background-color: rgba(#283b47, 0.8);
+    color: $tagTextColor;
+    box-shadow: $shadow;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
   .links {
     margin-top: $padding;
     margin-bottom: $padding;
@@ -29,23 +34,5 @@
       margin-top: $paddingHalf;
       margin-bottom: $paddingHalf;
     }
-  }
-
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid $textColor;
-    margin-top: $paddingHalf;
-    margin-bottom: calc(#{$paddingHalf} / 2);
-  }
-
-  h4 {
-    padding: 6px;
-    background-color: rgba(#283b47, 0.8);
-    color: $tagTextColor;
-    box-shadow: $shadow;
-    padding-bottom: $paddingHalf;
-    font-weight: bold;
   }
 }

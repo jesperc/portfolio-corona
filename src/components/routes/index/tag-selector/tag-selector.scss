@@ -2,26 +2,26 @@
 
 .tag-selector {
   margin-top: $padding;
-}
 
-.tag {
-  display: inline-block;
-  padding: $paddingHalf;
-  margin-right: $paddingHalf;
-  margin-bottom: $paddingHalf;
-  background-color: $tagColor;
-  font-weight: bold;
-  color: $tagTextColor;
-  box-shadow: $shadow;
-  text-shadow: $textShadow;
+  .tag {
+    display: inline-block;
+    padding: $paddingHalf;
+    margin-right: $paddingHalf;
+    margin-bottom: $paddingHalf;
+    background-color: $tagColor;
+    font-weight: bold;
+    color: $tagTextColor;
+    box-shadow: $shadow;
+    text-shadow: $textShadow;
 
-  &:hover {
-    background-color: $tagHoverColor;
-    cursor: pointer;
+    &:hover {
+      background-color: $tagHoverColor;
+      cursor: pointer;
+    }
   }
-}
 
-.tag-selected {
-  font-weight: bold;
-  background-color: $tagHoverColor;
+  .selected {
+    font-weight: bold;
+    background-color: $tagHoverColor;
+  }
 }

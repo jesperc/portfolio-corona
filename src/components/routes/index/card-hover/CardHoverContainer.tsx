@@ -8,9 +8,9 @@ export interface CardHoverProps {
 const CardHoverContainer: React.FC<CardHoverProps> = ({ tags }) => {
   return (
     <div className="card-hover">
-      <div className="card-hover-tags">
+      <div className="tags">
         {tags.map((tag) => (
-          <span key={`card-hover-${tag}`} className="card-hover-tag">
+          <span key={`card-hover-${tag}`} className="tag">
             {tag}
           </span>
         ))}

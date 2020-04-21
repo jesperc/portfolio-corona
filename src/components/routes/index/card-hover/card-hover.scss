@@ -9,22 +9,22 @@ $hoverTagMargin: calc(#{$paddingHalf} / 3);
   height: 199px;
   background-color: rgba(black, 0.6);
   text-align: center;
-}
 
-.card-hover-tags {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  transform: translateY(9vh);
-}
+  .tags {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    transform: translateY(9vh);
+  }
 
-.card-hover-tag {
-  padding: 6px;
-  background-color: $tagHoverColor;
-  margin: $hoverTagMargin;
-  font-weight: bold;
-  color: $tagTextColor;
-  box-shadow: $shadow;
-  text-shadow: $textShadow;
-  font-size: 14px;
+  .tag {
+    padding: calc(#{$paddingHalf} * 0.6);
+    background-color: $tagHoverColor;
+    margin: $hoverTagMargin;
+    font-weight: bold;
+    color: $tagTextColor;
+    box-shadow: $shadow;
+    text-shadow: $textShadow;
+    font-size: 14px;
+  }
 }

@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import GalleryView from './GalleryView'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchData } from '../../../../redux/actions'
+import { useSelector } from 'react-redux'
 import { TagId, Tag, Project, ProjectId } from '../../../../db/models'
 import { RootState } from '../../../../redux/reducers'
-
-export interface GalleryContainerProps {}
 
 const emptyProject = {
   id: ProjectId.hidden,
@@ -21,9 +18,8 @@ const emptyProject = {
   sortOrder: 100,
 } as Project
 
-const GalleryContainer: React.FC<GalleryContainerProps> = ({}) => {
+const GalleryContainer: React.FC = () => {
   const [selectedTags, setSelectedTags] = useState([TagId.showAll] as TagId[])
-  const dispatch = useDispatch()
 
   const onSelectTag = (type: TagId) => {
     let tags = [...selectedTags]
@@ -42,10 +38,6 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({}) => {
     }
     setSelectedTags(tags)
   }
-
-  useEffect(() => {
-    dispatch(fetchData())
-  }, [])
 
   // get projects by selected tags
   let projects = useSelector((state: RootState) => state.projects)
