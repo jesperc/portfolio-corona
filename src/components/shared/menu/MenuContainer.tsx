@@ -14,7 +14,9 @@ const RESUME_PATH = '/resume'
 const HOME_PATH = '/'
 
 const MenuContainer: React.FC<MenuContainerProps> = ({}) => {
-  const [activePath, setActivePath] = useState('/')
+  const [activePath, setActivePath] = useState(
+    window.location.href.includes(RESUME_PATH) ? RESUME_PATH : HOME_PATH
+  )
 
   const renderListItem = (path: string, icon: string): JSX.Element => {
     return (

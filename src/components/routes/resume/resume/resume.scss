@@ -10,10 +10,15 @@
 
   a {
     color: $textColor;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   h3 {
-    margin-bottom: $paddingHalf;
+    margin-bottom: $padding;
   }
 
   .links {
@@ -24,5 +29,23 @@
       margin-top: $paddingHalf;
       margin-bottom: $paddingHalf;
     }
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $textColor;
+    margin-top: $paddingHalf;
+    margin-bottom: calc(#{$paddingHalf} / 2);
+  }
+
+  h4 {
+    padding: 6px;
+    background-color: rgba(#283b47, 0.8);
+    color: $tagTextColor;
+    box-shadow: $shadow;
+    padding-bottom: $paddingHalf;
+    font-weight: bold;
   }
 }
