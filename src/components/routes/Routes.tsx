@@ -10,18 +10,10 @@ import PageNotFound from './page-not-found'
 import '../../style/global.scss'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/reducers'
-import { getItem } from '../../misc/localStorage'
-import { LocalStorageKeys, StyleTheme } from '../../misc/enums'
 import DataLoader from '../shared/data-loader'
 
 const Routes: React.FC = () => {
   let theme = useSelector((state: RootState) => state.theme)
-  useEffect(() => {
-    theme =
-      getItem(LocalStorageKeys.theme) === StyleTheme.dark
-        ? StyleTheme.dark
-        : StyleTheme.light
-  }, [])
 
   return (
     <Router>

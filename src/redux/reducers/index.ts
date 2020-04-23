@@ -1,6 +1,7 @@
 import { Tag, Project } from '../../db/models'
 import { DATA_LOADED, SET_THEME } from '../constants/actionTypes'
-import { StyleTheme } from '../../misc/enums'
+import { StyleTheme, LocalStorageKeys } from '../../misc/enums'
+import { getItem } from '../../misc/localStorage'
 
 export interface RootState {
   tags: Tag[]
@@ -8,17 +9,22 @@ export interface RootState {
   theme: StyleTheme
 }
 
+const getThemeFromLocalStorage = () => {
+  return getItem(LocalStorageKeys.theme) === StyleTheme.light
+    ? StyleTheme.light
+    : StyleTheme.dark
+}
+
 const initialState: RootState = {
   tags: [],
   projects: [],
-  theme: StyleTheme.light,
+  theme: getThemeFromLocalStorage(),
 }
 
 const rootReducer = (
   state: RootState = initialState,
   action: any
 ): RootState => {
-  console.log(action.type)
   if (action.type === DATA_LOADED) {
     const { tags, projects } = action.payload
     return {

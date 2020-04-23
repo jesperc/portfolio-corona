@@ -6,6 +6,7 @@ export enum Path {
 export enum StyleTheme {
   dark = 'theme-dark',
   light = 'theme-light',
+  none = 'theme-none',
 }
 
 export enum LocalStorageKeys {
