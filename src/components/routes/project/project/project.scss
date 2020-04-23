@@ -1,29 +1,52 @@
 @import '../../../../style/constants.scss';
+@import '../../../../style/themify.scss';
 
 .project {
-  h3 {
-    margin: $padding;
-  }
+  margin: $padding;
 
   h4 {
-    margin: $padding;
     padding: calc(#{$paddingHalf} * 0.6);
-    background-color: rgba(#283b47, 0.8);
-    color: $tagTextColor;
-    box-shadow: $shadow;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+
+    @include themify($themes) {
+      color: themed('tagTextColor');
+      background-color: themed('headerBackgroundColor');
+      box-shadow: themed('boxShadow');
+    }
+  }
+
+  h3 {
+    margin-bottom: $padding;
   }
 
   p {
-    margin: $padding;
+    margin-bottom: $padding;
+    margin-top: $padding;
   }
 
   a {
-    color: $textColor;
+    @include themify($themes) {
+      color: themed('textColor');
+    }
+
     text-decoration: none;
 
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  li {
+    margin-left: $padding;
+    margin-bottom: calc(#{$paddingHalf} / 2);
+    margin-top: calc(#{$paddingHalf} / 2);
+  }
+
+  ul {
+    list-style-type: square;
+    margin-top: $padding;
+    margin-bottom: $padding;
   }
 }

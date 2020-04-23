@@ -1,10 +1,12 @@
 @import '../../../../style/constants.scss';
+@import '../../../../style/themify.scss';
 
 .resume {
   margin: $padding;
-
   a {
-    color: $textColor;
+    @include themify($themes) {
+      color: themed('textColor');
+    }
     text-decoration: none;
 
     &:hover {
@@ -18,12 +20,15 @@
 
   h4 {
     padding: calc(#{$paddingHalf} * 0.6);
-    background-color: rgba(#283b47, 0.8);
-    color: $tagTextColor;
-    box-shadow: $shadow;
     font-weight: bold;
     display: flex;
     align-items: center;
+
+    @include themify($themes) {
+      color: themed('tagTextColor');
+      background-color: themed('headerBackgroundColor');
+      box-shadow: themed('boxShadow');
+    }
   }
 
   .links {

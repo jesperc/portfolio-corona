@@ -1,4 +1,5 @@
 @import '../../../../style/constants.scss';
+@import '../../../../style/themify.scss';
 
 .tag-selector {
   margin-top: $padding;
@@ -8,20 +9,28 @@
     padding: $paddingHalf;
     margin-right: $paddingHalf;
     margin-bottom: $paddingHalf;
-    background-color: $tagColor;
     font-weight: bold;
-    color: $tagTextColor;
-    box-shadow: $shadow;
-    text-shadow: $textShadow;
+
+    @include themify($themes) {
+      color: themed('tagTextColor');
+      background-color: themed('tagBackgroundColor');
+      text-shadow: themed('textShadow');
+      box-shadow: themed('boxShadow');
+    }
 
     &:hover {
-      background-color: $tagHoverColor;
+      @include themify($themes) {
+        background-color: themed('tagHoverBackgroundColor');
+      }
       cursor: pointer;
     }
   }
 
   .selected {
     font-weight: bold;
-    background-color: $tagHoverColor;
+
+    @include themify($themes) {
+      background-color: themed('tagHoverBackgroundColor');
+    }
   }
 }

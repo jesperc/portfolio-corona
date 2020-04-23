@@ -1,7 +1,11 @@
 @import '../../../../style/constants.scss';
+@import '../../../../style/themify.scss';
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @include themify($themes) {
+    box-shadow: themed('boxShadow');
+  }
+
   margin-bottom: $padding;
   width: $thumbnailWidth;
   height: $thumbnailHeight;
@@ -15,12 +19,15 @@
       position: absolute;
       width: calc(#{$thumbnailWidth} - #{$padding});
       padding: calc(#{$paddingHalf} * 0.6);
-      background-color: rgba(#283b47, 0.8);
       margin-top: calc(#{$paddingHalf} / 2);
-      color: $tagTextColor;
-      box-shadow: $shadow;
       font-size: 16px;
       cursor: pointer;
+
+      @include themify($themes) {
+        background-color: themed('cardTitleBackgroundColor');
+        color: themed('tagTextColor');
+        box-shadow: themed('boxShadow');
+      }
     }
   }
 }

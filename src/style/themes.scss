@@ -1,0 +1,41 @@
+$themes: (
+  light: (
+    appBackgroundColor: #e2e2e2,
+    textColor: #494b62,
+    titleColor: #b5b5b5,
+    menuBackgroundColor: #c1c1c1,
+    menuIconColor: #b5b5b5,
+    menuHoverColor: #afafaf,
+    tagTextColor: #dad7d1,
+    tagBackgroundColor: #3d5a6c,
+    tagHoverBackgroundColor: #384a38,
+    cardTitleBackgroundColor: rgba(#283b47, 0.8),
+    headerBackgroundColor: #283b47,
+    textShadow: 0 2px 2px #0a0909,
+    boxShadow: (
+      0 4px 8px 0 rgba(#000000, 0.2),
+      0 6px 20px 0 rgba(#000000, 0.2),
+    ),
+  ),
+  dark: (
+    appBackgroundColor: #252526,
+    textColor: #b5b5b5,
+    titleColor: #b5b5b5,
+    menuBackgroundColor: #3c3c3c,
+    menuIconColor: #b5b5b5,
+    menuHoverColor: #505050,
+    tagTextColor: #dad7d1,
+    tagBackgroundColor: #3d5a6c,
+    tagHoverBackgroundColor: #384a38,
+    cardTitleBackgroundColor: rgba(#283b47, 0.8),
+    headerBackgroundColor: #283b47,
+    textShadow: 0 2px 2px #0a0909,
+    boxShadow: (
+      0 4px 8px 0 rgba(#000000, 0.2),
+      0 6px 20px 0 rgba(#000000, 0.19),
+    ),
+  ),
+);
+
+$htmlBackgroundColorDark: #1e1e1e;
+$htmlBackgroundColorLight: #cecece;

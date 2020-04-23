@@ -1,4 +1,5 @@
 @import '../../../../style/constants.scss';
+@import '../../../../style/themify.scss';
 
 $hoverTagMargin: calc(#{$paddingHalf} / 3);
 
@@ -19,12 +20,14 @@ $hoverTagMargin: calc(#{$paddingHalf} / 3);
 
   .tag {
     padding: calc(#{$paddingHalf} * 0.6);
-    background-color: $tagHoverColor;
     margin: $hoverTagMargin;
     font-weight: bold;
-    color: $tagTextColor;
-    box-shadow: $shadow;
-    text-shadow: $textShadow;
     font-size: 14px;
+
+    @include themify($themes) {
+      background-color: themed('tagHoverBackgroundColor');
+      color: themed('tagTextColor');
+      box-shadow: themed('boxShadow');
+    }
   }
 }

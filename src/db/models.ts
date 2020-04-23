@@ -42,7 +42,6 @@ export type Project = {
   technicalDescription: string
   technologies: string[]
   links: Link[]
-  images: string[]
   thumbnail: string
   tags: Tag[]
   duration: string

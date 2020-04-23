@@ -38,7 +38,6 @@ const seedData = (): Data => {
       technicalDescription: 'tech desc',
       technologies: ['React 15'],
       links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
-      images: [projectAcademicWorkThumbnailImage],
       tags: tags.filter((tag) =>
         [
           TagId.vue,
@@ -59,9 +58,8 @@ const seedData = (): Data => {
       title: 'My Bazar',
       description: 'desc',
       technicalDescription: 'tech desc',
-      technologies: ['React 15'],
+      technologies: ['this', 'is', 'just', 'a', 'test', 'list'],
       links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
-      images: [''],
       tags: tags.filter((tag) =>
         [
           TagId.react,
@@ -96,7 +94,6 @@ const seedData = (): Data => {
       technicalDescription: 'tech desc',
       technologies: ['React 15'],
       links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
-      images: [''],
       tags: tags.filter((tag) =>
         [
           TagId.dotNetCore,
@@ -117,7 +114,6 @@ const seedData = (): Data => {
       technicalDescription: 'tech desc',
       technologies: ['React 15'],
       links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
-      images: [''],
       tags: tags.filter((tag) =>
         [
           TagId.dotNet,
@@ -138,7 +134,6 @@ const seedData = (): Data => {
       technicalDescription: 'tech desc',
       technologies: ['React 15'],
       links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
-      images: [''],
       tags: tags.filter((tag) =>
         [TagId.javaSe, TagId.GWT, TagId.javaScript].includes(tag.id)
       ),

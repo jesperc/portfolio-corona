@@ -1,13 +1,16 @@
 @import '../../../style/constants.scss';
+@import '../../../style/themify.scss';
 
 $menuPadding: 10px;
 $menuPaddingLeft: 14px;
-$hoverColor: #505050;
 
 .menu {
-  background-color: #3c3c3c;
+  @include themify($themes) {
+    background-color: themed('menuBackgroundColor');
+    box-shadow: themed('boxShadow');
+  }
+
   padding-left: $padding;
-  box-shadow: $shadow;
 
   ul {
     margin: 0;
@@ -21,11 +24,20 @@ $hoverColor: #505050;
       $menuPaddingLeft;
 
     &:hover {
-      background-color: $hoverColor;
+      @include themify($themes) {
+        background-color: themed('menuHoverColor');
+      }
     }
   }
 
   .active {
-    background-color: $hoverColor;
+    @include themify($themes) {
+      background-color: themed('menuHoverColor');
+    }
   }
+}
+
+.last-item {
+  float: right;
+  margin-right: $padding;
 }
