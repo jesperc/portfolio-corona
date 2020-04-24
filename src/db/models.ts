@@ -46,6 +46,12 @@ export type Project = {
   tags: Tag[]
   duration: string
   sortOrder: number
+  type: ProjectType
+}
+
+export enum ProjectType {
+  work = 'Work',
+  hobby = 'Hobby',
 }
 
 export enum ProjectId {

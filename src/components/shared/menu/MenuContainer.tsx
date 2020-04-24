@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './menu.scss'
 import HomeIcon from '@material-ui/icons/Home'
 import ResumeIcon from '@material-ui/icons/AccountBox'
+import HobbyIcon from '@material-ui/icons/GitHub'
 import DarkModeIcon from '@material-ui/icons/Brightness3'
 import LightModeIcon from '@material-ui/icons/WbSunny'
 import { getItem, setItem } from '../../../misc/localStorage'
@@ -17,8 +18,13 @@ const linkStyle: CSSProperties = {
 }
 
 const MenuContainer: React.FC = () => {
+  const href = window.location.href
   const [activePath, setActivePath] = useState(
-    window.location.href.includes(Path.resume) ? Path.resume : Path.home
+    href.includes(Path.resume)
+      ? Path.resume
+      : href.includes(Path.hobby)
+      ? Path.hobby
+      : Path.home
   )
 
   const dispatch = useDispatch()
@@ -27,7 +33,7 @@ const MenuContainer: React.FC = () => {
     if (getItem(LocalStorageKeys.theme) === StyleTheme.dark) {
       dispatch(setTheme(StyleTheme.dark))
     }
-  }, [])
+  }, [dispatch])
 
   const toggleDarkMode = () => {
     const theme: StyleTheme =
@@ -57,6 +63,9 @@ const MenuContainer: React.FC = () => {
     <ul className="menu">
       {renderListItem(Path.home, () => (
         <HomeIcon className="icon" />
+      ))}
+      {renderListItem(Path.hobby, () => (
+        <HobbyIcon className="icon" />
       ))}
       {renderListItem(Path.resume, () => (
         <ResumeIcon className="icon" />

@@ -8,7 +8,7 @@ const DataLoaderContainer: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchData())
-  }, [])
+  }, [dispatch])
   return null
 }
 

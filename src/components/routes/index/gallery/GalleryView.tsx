@@ -1,7 +1,7 @@
 import React from 'react'
 import TagSelector from '../tag-selector'
 import Card from '../card'
-import { TagId, Project, Tag } from '../../../../db/models'
+import { TagId, Project, Tag, ProjectType } from '../../../../db/models'
 import './gallery.scss'
 
 export interface GalleryViewProps {
@@ -9,6 +9,7 @@ export interface GalleryViewProps {
   selectedTags: TagId[]
   onSelectTag: Function
   tags: Tag[]
+  type: ProjectType
 }
 
 const GalleryView: React.FC<GalleryViewProps> = ({
@@ -16,10 +17,11 @@ const GalleryView: React.FC<GalleryViewProps> = ({
   onSelectTag,
   projects,
   tags,
+  type,
 }) => {
   return (
     <div className="gallery">
-      <h3>Projects</h3>
+      <h3>{type}</h3>
       <TagSelector selected={selectedTags} onClick={onSelectTag} tags={tags} />
       <div className="cards">
         {projects.map((project: Project) => (

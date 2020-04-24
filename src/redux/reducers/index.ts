@@ -6,6 +6,7 @@ import { getItem } from '../../misc/localStorage'
 export interface RootState {
   tags: Tag[]
   projects: Project[]
+  hobbyProjects: Project[]
   theme: StyleTheme
 }
 
@@ -19,6 +20,7 @@ const initialState: RootState = {
   tags: [],
   projects: [],
   theme: getThemeFromLocalStorage(),
+  hobbyProjects: [],
 }
 
 const rootReducer = (

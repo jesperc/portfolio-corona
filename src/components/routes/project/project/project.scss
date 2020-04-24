@@ -5,7 +5,7 @@
   margin: $padding;
 
   h4 {
-    padding: calc(#{$paddingHalf} * 0.6);
+    padding: $paddingHalf;
     font-weight: bold;
     display: flex;
     align-items: center;

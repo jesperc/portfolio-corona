@@ -1,4 +1,12 @@
-import { Data, Tag, Project, TagId, ProjectId, Link } from './models'
+import {
+  Data,
+  Tag,
+  Project,
+  TagId,
+  ProjectId,
+  Link,
+  ProjectType,
+} from './models'
 import {
   projectAcademicWorkThumbnailImage,
   projectMyBazarThumbnailImage,
@@ -52,6 +60,7 @@ const seedData = (): Data => {
       duration: 'Ongoing',
       thumbnail: projectAcademicWorkThumbnailImage,
       sortOrder: 0,
+      type: ProjectType.work,
     } as Project,
     {
       id: ProjectId.myBazar,
@@ -71,6 +80,7 @@ const seedData = (): Data => {
       duration: '3 months',
       thumbnail: projectMyBazarThumbnailImage,
       sortOrder: 1,
+      type: ProjectType.work,
     } as Project,
     {
       id: ProjectId.hockeyMagasinet,
@@ -86,6 +96,7 @@ const seedData = (): Data => {
       duration: '1 month',
       thumbnail: projectHockeymagasinetThumbnailImageImage,
       sortOrder: 2,
+      type: ProjectType.work,
     } as Project,
     {
       id: ProjectId.highCoastWhisky,
@@ -106,6 +117,7 @@ const seedData = (): Data => {
       duration: '5 months',
       thumbnail: projectHighCoastWhiskyThumbnailImageImage,
       sortOrder: 3,
+      type: ProjectType.work,
     } as Project,
     {
       id: ProjectId.thorengruppen,
@@ -126,6 +138,7 @@ const seedData = (): Data => {
       duration: '1 year, 7 months',
       thumbnail: projectThorengruppenThumbnailImageImage,
       sortOrder: 4,
+      type: ProjectType.work,
     } as Project,
     {
       id: ProjectId.agency9,
@@ -140,6 +153,22 @@ const seedData = (): Data => {
       duration: '7 months',
       thumbnail: projectAgency9ThumbnailImageImage,
       sortOrder: 5,
+      type: ProjectType.work,
+    } as Project,
+    {
+      id: ProjectId.agency9,
+      title: 'Agency 9',
+      description: 'desc',
+      technicalDescription: 'tech desc',
+      technologies: ['React 15'],
+      links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
+      tags: tags.filter((tag) =>
+        [TagId.javaSe, TagId.GWT, TagId.javaScript].includes(tag.id)
+      ),
+      duration: '7 months',
+      thumbnail: projectAgency9ThumbnailImageImage,
+      sortOrder: 5,
+      type: ProjectType.hobby,
     } as Project,
   ]
 
