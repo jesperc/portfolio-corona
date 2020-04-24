@@ -10,21 +10,6 @@ export interface GalleryContainerProps {
   type: ProjectType
 }
 
-const emptyProject = {
-  id: ProjectId.hidden,
-  title: '',
-  description: '',
-  technicalDescription: '',
-  technologies: [],
-  links: [],
-  images: [],
-  thumbnail: '',
-  tags: [],
-  duration: '',
-  sortOrder: 100,
-  type: ProjectType.work,
-} as Project
-
 const GalleryContainer: React.FC<GalleryContainerProps> = ({ type }) => {
   const [selectedTags, setSelectedTags] = useState([TagId.showAll] as TagId[])
 
@@ -50,18 +35,21 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ type }) => {
     setSelectedTags(tags)
   }
 
-  const { projects, tags } = useSelector((state: RootState) => state)
+  const { projects } = useSelector((state: RootState) => state)
   let filteredProjects: Project[] = getProjectsBySelectedTags(
     projects,
     selectedTags,
     type
   )
 
-  const filteredTags = getTagsByProjects(projects, tags, type)
+  const filteredTags = getTagsByProjects(projects, type)
 
   // TODO: fix styling hack
   if (filteredProjects.length === 2 || filteredProjects.length === 5) {
-    filteredProjects = [...filteredProjects, emptyProject]
+    filteredProjects = [
+      ...filteredProjects,
+      { id: ProjectId.hidden } as Project,
+    ]
   }
 
   return (

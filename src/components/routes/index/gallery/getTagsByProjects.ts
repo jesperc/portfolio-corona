@@ -1,11 +1,8 @@
 import { ProjectType, Tag, Project, TagId } from '../../../../db/models'
 
-const getTagsByProjects = (
-  projects: Project[],
-  tags: Tag[],
-  type: ProjectType
-): Tag[] => {
-  return tags
+const getTagsByProjects = (projects: Project[], type: ProjectType): Tag[] => {
+  return projects
+    .flatMap((project) => project.tags)
     .sort((a: Tag, b: Tag) => (a.sortOrder > b.sortOrder ? 1 : -1))
     .filter(
       (tag) =>
