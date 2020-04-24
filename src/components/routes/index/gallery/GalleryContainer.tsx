@@ -42,7 +42,9 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ type }) => {
     type
   )
 
+  console.log(projects.flatMap((project) => project.tags))
   const filteredTags = getTagsByProjects(projects, type)
+  console.log('filteredTags', filteredTags)
 
   // TODO: fix styling hack
   if (filteredProjects.length === 2 || filteredProjects.length === 5) {

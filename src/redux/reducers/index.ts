@@ -28,11 +28,12 @@ const rootReducer = (
   action: any
 ): RootState => {
   if (action.type === DATA_LOADED) {
-    const { tags, projects } = action.payload
+    const { tags, projects, hobbyProjects } = action.payload
     return {
       ...state,
       tags,
       projects,
+      hobbyProjects,
     } as RootState
   } else if (action.type === SET_THEME) {
     return {
