@@ -23,6 +23,7 @@ h4 {
 }
 
 .app {
+  @extend .theme-transition;
   width: 1000px;
   height: 100vh;
   margin-left: auto;
@@ -35,11 +36,20 @@ h4 {
 }
 
 .theme-dark {
+  @extend .theme-transition;
   background-color: $htmlBackgroundColorDark;
 }
 
 .theme-light {
+  @extend .theme-transition;
   background-color: $htmlBackgroundColorLight;
+}
+
+.theme-transition {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .icon {

@@ -1,14 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import GalleryView from './GalleryView'
 import { useSelector } from 'react-redux'
-import {
-  TagId,
-  Tag,
-  Project,
-  ProjectId,
-  ProjectType,
-} from '../../../../db/models'
+import { TagId, Project, ProjectId, ProjectType } from '../../../../db/models'
 import { RootState } from '../../../../redux/reducers'
+import getProjectsBySelectedTags from './getProjectsBySelectedTags'
+import getTagsByProjects from './getTagsByProjects'
 
 export interface GalleryContainerProps {
   type: ProjectType
@@ -32,6 +28,10 @@ const emptyProject = {
 const GalleryContainer: React.FC<GalleryContainerProps> = ({ type }) => {
   const [selectedTags, setSelectedTags] = useState([TagId.showAll] as TagId[])
 
+  useEffect(() => {
+    setSelectedTags([TagId.showAll])
+  }, [type])
+
   const onSelectTag = (type: TagId) => {
     let tags = [...selectedTags]
     if (type === TagId.showAll) {
@@ -50,38 +50,26 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ type }) => {
     setSelectedTags(tags)
   }
 
-  // get projects by selected tags
-  let projects = useSelector((state: RootState) => state.projects)
-    .filter(
-      (project: Project) =>
-        project.type === type &&
-        project.tags
-          .map((tag: Tag) => tag.id)
-          .some(
-            (type: TagId) =>
-              selectedTags.includes(type) ||
-              selectedTags.includes(TagId.showAll)
-          )
-    )
-    .sort((a: Project, b: Project) => (a.sortOrder > b.sortOrder ? 1 : -1))
+  const { projects, tags } = useSelector((state: RootState) => state)
+  let filteredProjects: Project[] = getProjectsBySelectedTags(
+    projects,
+    selectedTags,
+    type
+  )
 
-  // get and sort all tags based on sort order, and list only tags that exists for the
-  // current project type.
-  const tags: Tag[] = useSelector((state: RootState) => state.tags)
-    .sort((a: Tag, b: Tag) => (a.sortOrder > b.sortOrder ? 1 : -1))
-    .filter((tag) => projects.flatMap((project) => project.tags).includes(tag))
+  const filteredTags = getTagsByProjects(projects, tags, type)
 
-  if (projects.length === 2 || projects.length === 5) {
-    // TODO: fix styling hack
-    projects = [...projects, emptyProject]
+  // TODO: fix styling hack
+  if (filteredProjects.length === 2 || filteredProjects.length === 5) {
+    filteredProjects = [...filteredProjects, emptyProject]
   }
 
   return (
     <GalleryView
       selectedTags={selectedTags}
       onSelectTag={onSelectTag}
-      projects={projects}
-      tags={tags}
+      projects={filteredProjects}
+      tags={filteredTags}
       type={type}
     />
   )

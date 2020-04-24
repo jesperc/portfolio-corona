@@ -17,7 +17,7 @@ const Routes: React.FC = () => {
   let theme = useSelector((state: RootState) => state.theme)
   return (
     <Router>
-      <div className={theme}>
+      <div className={`${theme} theme-transition`}>
         <div className="app">
           <DataLoader />
           <Header />
