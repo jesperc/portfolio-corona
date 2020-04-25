@@ -40,8 +40,8 @@
 
   li {
     margin-left: $padding;
-    margin-bottom: calc(#{$paddingHalf} / 2);
-    margin-top: calc(#{$paddingHalf} / 2);
+    margin-bottom: $paddingHalf;
+    margin-top: $paddingHalf;
   }
 
   ul {
