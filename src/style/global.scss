@@ -36,24 +36,27 @@ p {
 .app {
   @extend .theme-transition;
 
-  overflow-x: hidden;
-
   position: relative;
   padding-bottom: calc(#{$paddingHalf} / 2);
 
   @include themify($themes) {
-    background-color: themed('appBackgroundColor');
     color: themed('textColor');
-    box-shadow: themed('boxShadow');
   }
 }
 
 .center-overlay {
+  @extend .theme-transition;
+
   min-height: 100%;
   position: relative;
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
+
+  @include themify($themes) {
+    background-color: themed('appBackgroundColor');
+    box-shadow: themed('boxShadow');
+  }
 }
 
 .theme-dark {
@@ -70,7 +73,7 @@ p {
 
 .theme-overlay {
   @extend .theme-transition;
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   overflow: auto;

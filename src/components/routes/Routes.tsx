@@ -18,7 +18,7 @@ const Routes: React.FC = () => {
   console.log(theme)
   return (
     <Router>
-      <div className={`${theme} theme-transition`}>
+      <div className={`${theme}`}>
         <div className="center-overlay">
           <div className="app">
             <DataLoader />
