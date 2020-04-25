@@ -1,4 +1,4 @@
-import { ProjectType, Tag, Project, TagId } from '../../../../db/models'
+import { ProjectType, Tag, Project } from '../../../../db/models'
 
 const getTagsByProjects = (projects: Project[], type: ProjectType): Tag[] => {
   const tags = [...new Set(projects.flatMap((project) => project.tags))]

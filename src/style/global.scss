@@ -28,14 +28,16 @@ p {
 
 .app {
   @extend .theme-transition;
+
   position: relative;
+  padding-bottom: calc(#{$paddingHalf} / 2);
+
   @include themify($themes) {
     background-color: themed('appBackgroundColor');
     color: themed('textColor');
     box-shadow: themed('boxShadow');
     border: 1px solid themed('appBackgroundColor'); // TODO: fix border hack
   }
-  padding-bottom: calc(#{$paddingHalf} / 2);
 }
 
 .center-overlay {
@@ -48,6 +50,7 @@ p {
 
 .theme-dark {
   @extend .theme-overlay;
+
   background-color: $htmlBackgroundColorDark;
 }
 

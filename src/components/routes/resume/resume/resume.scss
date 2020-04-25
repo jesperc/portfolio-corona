@@ -1,36 +1,9 @@
 @import '../../../../style/constants.scss';
-@import '../../../../style/themify.scss';
 
 .resume {
   margin: $padding;
-  a {
-    @include themify($themes) {
-      color: themed('textColor');
-    }
-    text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  h4 {
-    padding: $paddingHalf;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    margin-top: $padding;
-    margin-bottom: $paddingHalf;
-
-    @include themify($themes) {
-      color: themed('tagTextColor');
-      background-color: themed('headerBackgroundColor');
-      box-shadow: themed('boxShadow');
-    }
-  }
-
-  .links {
-    p {
-    }
+  h3 {
+    margin-bottom: $padding;
   }
 }

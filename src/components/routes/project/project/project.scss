@@ -1,52 +1,13 @@
 @import '../../../../style/constants.scss';
-@import '../../../../style/themify.scss';
 
 .project {
   margin: $padding;
 
-  h4 {
-    padding: $paddingHalf;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-
-    @include themify($themes) {
-      color: themed('tagTextColor');
-      background-color: themed('headerBackgroundColor');
-      box-shadow: themed('boxShadow');
-    }
-  }
-
   p {
     margin-bottom: $padding;
-    margin-top: $paddingHalf;
   }
 
-  a {
-    display: inline-block;
-
-    @include themify($themes) {
-      color: themed('textColor');
-    }
-
-    text-decoration: none;
-    margin-top: $padding;
-    margin-bottom: $padding;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  li {
-    margin-left: $padding;
-    margin-bottom: $paddingHalf;
-    margin-top: $paddingHalf;
-  }
-
-  ul {
-    list-style-type: square;
-    margin-top: $padding;
+  h3 {
     margin-bottom: $padding;
   }
 }

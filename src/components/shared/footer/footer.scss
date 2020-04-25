@@ -3,12 +3,13 @@
 
 .footer {
   position: absolute;
+  overflow: hidden;
   width: 100vw;
   bottom: 0;
-  overflow: hidden;
   left: calc(-50vw + 50%);
   height: calc(#{$padding} * 1.5);
   padding-top: calc(#{$paddingHalf} * 1.5);
+
   @include themify($themes) {
     color: themed('textColor');
     background-color: themed('menuBackgroundColor');

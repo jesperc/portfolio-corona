@@ -1,0 +1,58 @@
+@import '../../../style/constants.scss';
+@import '../../../style/themify.scss';
+
+.section {
+  h4 {
+    margin-bottom: $padding;
+  }
+
+  .header {
+    padding: $paddingHalf;
+    font-weight: bold;
+
+    @include themify($themes) {
+      color: themed('tagTextColor');
+      background-color: themed('headerBackgroundColor');
+      box-shadow: themed('boxShadow');
+    }
+  }
+
+  .paragraphs {
+    margin-bottom: $padding;
+    p {
+      margin-bottom: $paddingHalf;
+    }
+  }
+
+  .links {
+    margin-top: $padding;
+    margin-bottom: $padding;
+    .link {
+      display: block;
+      margin-bottom: $paddingHalf;
+    }
+    a {
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .bullet-list {
+    ul {
+      list-style-type: square;
+      margin-top: $padding;
+      margin-bottom: $padding;
+    }
+    li {
+      margin-left: $padding;
+      margin-bottom: $paddingHalf;
+      margin-top: $paddingHalf;
+    }
+  }
+}

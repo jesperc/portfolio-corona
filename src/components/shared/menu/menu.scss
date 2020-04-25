@@ -5,16 +5,11 @@ $menuPadding: 10px;
 $menuPaddingLeft: 14px;
 
 .menu {
+  padding-left: $padding;
+
   @include themify($themes) {
     background-color: themed('menuBackgroundColor');
     box-shadow: themed('boxShadow');
-  }
-
-  padding-left: $padding;
-
-  ul {
-    margin: 0;
-    padding: 0;
   }
 
   li {
