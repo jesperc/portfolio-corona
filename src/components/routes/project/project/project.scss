@@ -3,7 +3,6 @@
 
 .project {
   margin: $padding;
-  margin-bottom: calc(#{$padding} * 3);
 
   h4 {
     padding: $paddingHalf;
@@ -32,6 +31,7 @@
 
     text-decoration: none;
     margin-top: $padding;
+    margin-bottom: $padding;
 
     &:hover {
       text-decoration: underline;

@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import GalleryView from './GalleryView'
 import { useSelector } from 'react-redux'
-import { TagId, Project, ProjectId, ProjectType } from '../../../../db/models'
+import {
+  TagId,
+  Project,
+  ProjectId,
+  ProjectType,
+  Tag,
+} from '../../../../db/models'
 import { RootState } from '../../../../redux/reducers'
 import getProjectsBySelectedTags from './getProjectsBySelectedTags'
 import getTagsByProjects from './getTagsByProjects'
@@ -12,6 +18,7 @@ export interface GalleryContainerProps {
 
 const GalleryContainer: React.FC<GalleryContainerProps> = ({ type }) => {
   const [selectedTags, setSelectedTags] = useState([TagId.showAll] as TagId[])
+  const tags: Tag[] = useSelector((state: RootState) => state.tags)
 
   useEffect(() => {
     setSelectedTags([TagId.showAll])
@@ -42,16 +49,18 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ type }) => {
     type
   )
 
-  console.log(projects.flatMap((project) => project.tags))
-  const filteredTags = getTagsByProjects(projects, type)
-  console.log('filteredTags', filteredTags)
-
   // TODO: fix styling hack
   if (filteredProjects.length === 2 || filteredProjects.length === 5) {
     filteredProjects = [
       ...filteredProjects,
       { id: ProjectId.hidden } as Project,
     ]
+  }
+
+  let filteredTags = getTagsByProjects(projects, type)
+  const showAllTag = tags.find((tag) => tag.id === TagId.showAll)
+  if (showAllTag) {
+    filteredTags = [showAllTag, ...filteredTags]
   }
 
   return (

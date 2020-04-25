@@ -5,12 +5,10 @@ const getTagsByProjects = (projects: Project[], type: ProjectType): Tag[] => {
 
   return tags
     .sort((a: Tag, b: Tag) => (a.sortOrder > b.sortOrder ? 1 : -1))
-    .filter(
-      (tag) =>
-        projects
-          .filter((project) => project.type === type)
-          .flatMap((project) => project.tags)
-          .includes(tag) || tag.id === TagId.showAll
+    .filter((tag) =>
+      projects
+        .filter((project) => project.type === type)
+        .flatMap((project) => project.tags)
     )
 }
 

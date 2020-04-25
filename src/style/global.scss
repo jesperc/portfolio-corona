@@ -35,6 +35,7 @@ p {
     box-shadow: themed('boxShadow');
     border: 1px solid themed('appBackgroundColor'); // TODO: fix border hack
   }
+  padding-bottom: calc(#{$paddingHalf} / 2);
 }
 
 .center-overlay {
