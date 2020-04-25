@@ -6,7 +6,9 @@ const FooterContainer: React.FC = () => {
   const fullYear = new Date().getFullYear()
 
   return (
-    <div className="footer">{`Made by Jesper Corell ${copyrightSymbol} ${fullYear}`}</div>
+    <div className="centered">
+      <div className="footer">{`Made by Jesper Corell ${copyrightSymbol} ${fullYear}`}</div>
+    </div>
   )
 }
 

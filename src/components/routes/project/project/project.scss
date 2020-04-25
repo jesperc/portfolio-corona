@@ -3,6 +3,7 @@
 
 .project {
   margin: $padding;
+  margin-bottom: calc(#{$padding} * 3);
 
   h4 {
     padding: $paddingHalf;
@@ -17,21 +18,20 @@
     }
   }
 
-  h3 {
-    margin-bottom: $padding;
-  }
-
   p {
     margin-bottom: $padding;
-    margin-top: $padding;
+    margin-top: $paddingHalf;
   }
 
   a {
+    display: inline-block;
+
     @include themify($themes) {
       color: themed('textColor');
     }
 
     text-decoration: none;
+    margin-top: $padding;
 
     &:hover {
       text-decoration: underline;

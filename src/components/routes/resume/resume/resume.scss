@@ -14,15 +14,13 @@
     }
   }
 
-  h3 {
-    margin-bottom: $padding;
-  }
-
   h4 {
     padding: $paddingHalf;
     font-weight: bold;
     display: flex;
     align-items: center;
+    margin-top: $padding;
+    margin-bottom: $paddingHalf;
 
     @include themify($themes) {
       color: themed('tagTextColor');
@@ -32,12 +30,7 @@
   }
 
   .links {
-    margin-top: $padding;
-    margin-bottom: $padding;
-
     p {
-      margin-top: $paddingHalf;
-      margin-bottom: $paddingHalf;
     }
   }
 }

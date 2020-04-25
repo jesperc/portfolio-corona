@@ -41,13 +41,11 @@ const ProjectView: React.FC<ProjectViewProps> = ({ project }) => {
       {links.length > 0 && (
         <>
           <h4>Links</h4>
-          <p>
-            {links.map((link) => (
-              <a key={link.text} href={link.url}>
-                {link.text}
-              </a>
-            ))}
-          </p>
+          {links.map((link) => (
+            <a key={link.text} href={link.url}>
+              {link.text}
+            </a>
+          ))}
         </>
       )}
     </div>

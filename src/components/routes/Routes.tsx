@@ -18,28 +18,29 @@ const Routes: React.FC = () => {
   return (
     <Router>
       <div className={`${theme} theme-transition`}>
-        <div className="app">
-          <DataLoader />
-          <Header />
-          <Menu />
-          <Switch>
-            <Route exact path="/project/:id">
-              <Project />
-            </Route>
-            <Route exact path="/hobby">
-              <Gallery type={ProjectType.hobby} />
-            </Route>
-            <Route exact path="/resume">
-              <Resume />
-            </Route>
-            <Route exact path="/">
-              <Gallery type={ProjectType.work} />
-            </Route>
-            <Route>
-              <PageNotFound />
-            </Route>
-          </Switch>
-
+        <div className="center-overlay">
+          <div className="app">
+            <DataLoader />
+            <Header />
+            <Menu />
+            <Switch>
+              <Route exact path="/project/:id">
+                <Project />
+              </Route>
+              <Route exact path="/hobby">
+                <Gallery type={ProjectType.hobby} />
+              </Route>
+              <Route exact path="/resume">
+                <Resume />
+              </Route>
+              <Route exact path="/">
+                <Gallery type={ProjectType.work} />
+              </Route>
+              <Route>
+                <PageNotFound />
+              </Route>
+            </Switch>
+          </div>
           <Footer />
         </div>
       </div>

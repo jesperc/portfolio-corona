@@ -27,7 +27,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
 
   return (
     <div
-      style={title.length ? {} : hiddenStyle}
+      style={title?.length > 0 ? {} : hiddenStyle}
       className="card"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
