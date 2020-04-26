@@ -15,7 +15,6 @@ import { ProjectType } from '../../db/models'
 
 const Routes: React.FC = () => {
   let theme = useSelector((state: RootState) => state.theme)
-  console.log(theme)
   return (
     <Router>
       <div className={`${theme}`}>

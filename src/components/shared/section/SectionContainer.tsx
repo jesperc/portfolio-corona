@@ -25,7 +25,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       {renderParagraphs && (
         <div className="paragraphs">
           {paragraphs?.map((text: string) => (
-            <p>{text}</p>
+            <p key={text}>{text}</p>
           ))}
         </div>
       )}
@@ -33,6 +33,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
         <div className="links">
           {links?.map((link: Link) => (
             <a
+              key={link.url}
               className="link"
               href={link.url}
               target="_blank"
@@ -47,7 +48,9 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
         <div className="bullet-list">
           <ul>
             {bulletList?.map((text: string) => (
-              <li className="item">{text}</li>
+              <li className="item" key={text}>
+                {text}
+              </li>
             ))}
           </ul>
         </div>
