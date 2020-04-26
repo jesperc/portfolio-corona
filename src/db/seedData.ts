@@ -260,6 +260,12 @@ const seedData = (): Data => {
       tags: tags.filter((tag) =>
         [TagId.react, TagId.redux, TagId.typeScript].includes(tag.id)
       ),
+      links: [
+        {
+          url: 'https://github.com/jesperc/portfolio-corona',
+          text: 'Github repo',
+        } as Link,
+      ],
       duration: '',
       thumbnail: projectPortfolioThumbnailImage,
       sortOrder: 0,

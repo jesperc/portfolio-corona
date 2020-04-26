@@ -29,6 +29,11 @@
     margin-left: $paddingHalf;
   }
 
+  .github-icon {
+    font-size: $padding;
+    transform: translateY(4px);
+  }
+
   .text {
     transform: translateY(calc(#{$paddingHalf} * -1));
   }
