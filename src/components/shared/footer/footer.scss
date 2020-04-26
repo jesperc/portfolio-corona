@@ -1,7 +1,10 @@
 @import '../../../style/global.scss';
 @import '../../../style/themify.scss';
+@import '../../../style/global.scss';
 
 .footer {
+  @extend .theme-transition;
+
   position: absolute;
   width: 100vw;
   bottom: 0;
