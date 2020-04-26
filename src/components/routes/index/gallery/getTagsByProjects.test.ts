@@ -12,6 +12,10 @@ describe('getTagsByProjects', () => {
       type,
       tags: [{ id: TagId.typeScript }],
     } as Project,
+    {
+      type: ProjectType.hobby,
+      tags: [{ id: TagId.android }],
+    } as Project,
   ]
 
   it('must return 3 tags based on projects', () => {

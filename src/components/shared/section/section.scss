@@ -31,6 +31,11 @@
     .link {
       display: table;
       margin-bottom: $paddingHalf;
+
+      .link-icon {
+        transform-origin: left;
+        transform: translateY(-2px) translateX(16px) rotate(135deg);
+      }
     }
     a {
       @include themify($themes) {

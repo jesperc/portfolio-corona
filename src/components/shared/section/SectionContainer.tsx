@@ -1,6 +1,7 @@
 import React from 'react'
 import './section.scss'
 import { Link } from '../../../db/models'
+import HomeIcon from '@material-ui/icons/Link'
 
 export interface SectionContainerProps {
   header: string
@@ -39,6 +40,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
               target="_blank"
               rel="noopener noreferrer"
             >
+              <HomeIcon className="icon link-icon" />
               {link.text}
             </a>
           ))}
