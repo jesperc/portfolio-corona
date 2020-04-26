@@ -5,6 +5,7 @@ import projectHockeymagasinetThumbnail from './project-hockeymagasinet-thumbnail
 import projectThorengruppenThumbnail from './project-thorengruppen-thumbnail.png'
 import projectAgency9Thumbnail from './project-agency9-thumbnail.png'
 import projectPortfolioThumbnail from './project-portfolio-thumbnail.png'
+import projectWahlinsThumbnail from './project-wahlins-thumbnail.png'
 import spinnerGif from './spinner.gif'
 
 export const projectAcademicWorkThumbnailImage = projectAcademicWorkThumbnail
@@ -14,4 +15,5 @@ export const projectHockeymagasinetThumbnailImage = projectHockeymagasinetThumbn
 export const projectThorengruppenThumbnailImage = projectThorengruppenThumbnail
 export const projectAgency9ThumbnailImage = projectAgency9Thumbnail
 export const projectPortfolioThumbnailImage = projectPortfolioThumbnail
+export const projectWahlinsThumbnailImage = projectWahlinsThumbnail
 export const spinnerImage = spinnerGif

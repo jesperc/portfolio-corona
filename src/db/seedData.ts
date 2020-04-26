@@ -15,6 +15,7 @@ import {
   projectThorengruppenThumbnailImage,
   projectAgency9ThumbnailImage,
   projectPortfolioThumbnailImage,
+  projectWahlinsThumbnailImage,
 } from '../resources/images'
 
 const seedData = (): Data => {
@@ -60,7 +61,7 @@ const seedData = (): Data => {
       ),
       duration: 'Ongoing',
       thumbnail: projectAcademicWorkThumbnailImage,
-      sortOrder: 1,
+      sortOrder: 10,
       type: ProjectType.work,
     } as Project,
     {
@@ -79,7 +80,6 @@ const seedData = (): Data => {
         'React Native',
         'TypeScript',
         'Locize',
-        'Git',
         'Docker',
         'OS X',
         'Visual Studio Code',
@@ -100,7 +100,7 @@ const seedData = (): Data => {
       ),
       duration: '3 months',
       thumbnail: projectMyBazarThumbnailImage,
-      sortOrder: 2,
+      sortOrder: 11,
       type: ProjectType.work,
     } as Project,
     {
@@ -114,7 +114,6 @@ const seedData = (): Data => {
         'Angular 5',
         'Node.js',
         'TypeScript',
-        'Git',
         'Windows 10',
         'Ubuntu',
         'Visual Studio Code',
@@ -131,7 +130,7 @@ const seedData = (): Data => {
       ),
       duration: '1 month',
       thumbnail: projectHockeymagasinetThumbnailImage,
-      sortOrder: 3,
+      sortOrder: 12,
       type: ProjectType.work,
     } as Project,
     {
@@ -153,7 +152,6 @@ const seedData = (): Data => {
         '.NET Core 1.1',
         'TypeScript',
         'PostgreSQL',
-        'Git',
         'Visual Studio Code',
         'Windows 10',
         'Ubuntu',
@@ -175,7 +173,7 @@ const seedData = (): Data => {
       ),
       duration: '5 months',
       thumbnail: projectHighCoastWhiskyThumbnailImage,
-      sortOrder: 4,
+      sortOrder: 13,
       type: ProjectType.work,
     } as Project,
     {
@@ -194,7 +192,6 @@ const seedData = (): Data => {
         'SQL Server Management Studio',
         'Razor',
         'Bootstrap',
-        'Git ',
         'Sharepoint',
         'Visual Studio',
         'Windows 10',
@@ -211,7 +208,7 @@ const seedData = (): Data => {
       ),
       duration: '1 year, 7 months',
       thumbnail: projectThorengruppenThumbnailImage,
-      sortOrder: 5,
+      sortOrder: 14,
       type: ProjectType.work,
     } as Project,
     {
@@ -230,7 +227,6 @@ const seedData = (): Data => {
         'Java SE 8',
         'Google Web Toolkit',
         'JavaScript',
-        'Git',
         'Aalto XML Parser',
         'Eclipse',
         'OS X',
@@ -241,7 +237,7 @@ const seedData = (): Data => {
       ),
       duration: '7 months',
       thumbnail: projectAgency9ThumbnailImage,
-      sortOrder: 6,
+      sortOrder: 15,
       type: ProjectType.work,
     } as Project,
     {
@@ -253,7 +249,6 @@ const seedData = (): Data => {
         'React 16',
         'Redux',
         'Typescript',
-        'Git',
         'Visual Studio Code',
         'Windows 10',
       ],
@@ -269,6 +264,39 @@ const seedData = (): Data => {
       duration: '',
       thumbnail: projectPortfolioThumbnailImage,
       sortOrder: 0,
+      type: ProjectType.hobby,
+    } as Project,
+    {
+      id: ProjectId.wahlins,
+      title: 'Wahlins Auto Submit',
+      description: `Wåhlins Fastigheter is swedish company that among other things rents out aparments in first hand.
+        They select their tenants by randomly picking applicants on their apartments which they put out for sale between 
+        13-14 during week days. The ad usually stays up around 30 minutes so you need to be quick to respond.
+        This app checks if a new ad has been uploaded and submits an application automatically.`,
+      technicalDescription: `Node.js app which fetches the new ad web page at Wåhlins every 5 minutes and looks for new entries by digging in the DOM.
+        Uses a headless chrome node.js API called Puppeteer to submit an application through a form. Sends notification to a discord server of choice, which is optional.`,
+      techStack: [
+        'Puppeteer',
+        'Node.js',
+        'Javascript',
+        'Jest',
+        'Visual Studio Code',
+        'Windows 10',
+        'Raspberry pi',
+        'Raspian',
+      ],
+      tags: tags.filter((tag) =>
+        [TagId.javaScript, TagId.nodeJs].includes(tag.id)
+      ),
+      links: [
+        {
+          url: 'https://github.com/jesperc/wahlins-submit',
+          text: 'Github repo',
+        } as Link,
+      ],
+      duration: '',
+      thumbnail: projectWahlinsThumbnailImage,
+      sortOrder: 1,
       type: ProjectType.hobby,
     } as Project,
   ]

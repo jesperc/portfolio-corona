@@ -62,5 +62,6 @@ export enum ProjectId {
   thorengruppen,
   agency9,
   portfolio,
+  wahlins,
   hidden,
 }
