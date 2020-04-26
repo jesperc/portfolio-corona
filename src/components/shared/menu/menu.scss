@@ -2,8 +2,8 @@
 @import '../../../style/themify.scss';
 @import '../../../style/global.scss';
 
-$menuPadding: 10px;
-$menuPaddingLeft: 14px;
+$menuPadding: $paddingHalf;
+$menuPaddingLeft: calc(#{$paddingHalf} * 1.4);
 
 .menu {
   @extend .theme-transition;
@@ -18,7 +18,7 @@ $menuPaddingLeft: 14px;
   li {
     cursor: pointer;
     display: inline-block;
-    padding: $menuPadding $menuPaddingLeft calc(#{$menuPadding} * 0.4)
+    padding: $paddingHalf $menuPaddingLeft calc(#{$paddingHalf} * 0.4)
       $menuPaddingLeft;
 
     &:hover {

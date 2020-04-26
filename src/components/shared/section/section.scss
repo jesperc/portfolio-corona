@@ -37,13 +37,14 @@
       }
     }
     a {
-      @include themify($themes) {
-        color: themed('textColor');
-      }
       text-decoration: none;
 
       &:hover {
         text-decoration: underline;
+      }
+
+      @include themify($themes) {
+        color: themed('textColor');
       }
     }
   }

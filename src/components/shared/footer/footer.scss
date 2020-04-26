@@ -12,6 +12,27 @@
   height: calc(#{$padding} * 1.5);
   padding-top: calc(#{$paddingHalf} * 1.5);
 
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include themify($themes) {
+      color: themed('textColor');
+    }
+  }
+
+  .footer-icon {
+    transform: translateY(calc(#{$paddingHalf} * 0.6));
+    margin-left: $paddingHalf;
+  }
+
+  .text {
+    transform: translateY(calc(#{$paddingHalf} * -1));
+  }
+
   @include themify($themes) {
     color: themed('textColor');
     background-color: themed('menuBackgroundColor');
