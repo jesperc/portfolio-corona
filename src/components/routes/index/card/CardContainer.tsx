@@ -35,7 +35,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
       {hover && <CardHover tags={tags.map((tag) => tag.name)} />}
       <div className="title">
         <div className="text">{`${title} ${
-          duration.length > 0 ? `(${duration})` : ''
+          duration && duration.length > 0 ? `(${duration})` : ''
         }`}</div>
       </div>
       <Link to={`/project/${id}`}>
