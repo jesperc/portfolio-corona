@@ -22,10 +22,7 @@ const ProjectView: React.FC<ProjectViewProps> = ({ project }) => {
       <h3>{`${title} ${duration.length ? `(${duration})` : ''}`}</h3>
       <p>{description}</p>
       {technicalDescription && technicalDescription.length > 0 && (
-        <Section
-          header="Tech description"
-          paragraphs={[technicalDescription]}
-        />
+        <Section header="Tech summary" paragraphs={[technicalDescription]} />
       )}
       {techStack && techStack.length > 0 && (
         <Section

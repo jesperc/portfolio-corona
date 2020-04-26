@@ -213,7 +213,7 @@ const seedData = (): Data => {
     } as Project,
     {
       id: ProjectId.agency9,
-      title: 'Agency 9',
+      title: 'Agency9',
       description: `Agency9 is a leading provider of web and mobile solutions for 3D visualization of geographic information and maps for collaboration and communication. 
         My task was to improve the content pipeline by creating a parser for the 3D format COLLADA. 
         This was originally my bachelor thesis and I got hired after my graduation in order to improve and finish the project. 
