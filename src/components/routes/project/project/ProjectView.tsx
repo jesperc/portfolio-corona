@@ -13,27 +13,27 @@ const ProjectView: React.FC<ProjectViewProps> = ({ project }) => {
     duration,
     description,
     technicalDescription,
-    technologies,
+    techStack,
     links,
   } = project
 
   return (
     <div className="project">
-      <h3>{`${title} (${duration})`}</h3>
+      <h3>{`${title} ${duration.length ? `(${duration})` : ''}`}</h3>
       <p>{description}</p>
-      {technicalDescription.length > 0 && (
+      {technicalDescription && technicalDescription.length > 0 && (
         <Section
           header="Tech description"
           paragraphs={[technicalDescription]}
         />
       )}
-      {technologies.length > 0 && (
+      {techStack && techStack.length > 0 && (
         <Section
           header="Tech stack"
-          list={technologies.sort((a, b) => (a > b ? 1 : -1))}
+          list={techStack.sort((a, b) => (a > b ? 1 : -1))}
         />
       )}
-      {links.length > 0 && <Section header="Links" links={links} />}
+      {links && links.length > 0 && <Section header="Links" links={links} />}
     </div>
   )
 }

@@ -10,10 +10,11 @@ import {
 import {
   projectAcademicWorkThumbnailImage,
   projectMyBazarThumbnailImage,
-  projectHockeymagasinetThumbnailImageImage,
-  projectHighCoastWhiskyThumbnailImageImage,
-  projectThorengruppenThumbnailImageImage,
-  projectAgency9ThumbnailImageImage,
+  projectHockeymagasinetThumbnailImage,
+  projectHighCoastWhiskyThumbnailImage,
+  projectThorengruppenThumbnailImage,
+  projectAgency9ThumbnailImage,
+  projectPortfolioThumbnailImage,
 } from '../resources/images'
 
 const seedData = (): Data => {
@@ -44,7 +45,7 @@ const seedData = (): Data => {
       title: 'Academic Work',
       description: '',
       technicalDescription: '',
-      technologies: [],
+      techStack: [],
       links: [],
       tags: tags.filter((tag) =>
         [
@@ -59,7 +60,7 @@ const seedData = (): Data => {
       ),
       duration: 'Ongoing',
       thumbnail: projectAcademicWorkThumbnailImage,
-      sortOrder: 0,
+      sortOrder: 1,
       type: ProjectType.work,
     } as Project,
     {
@@ -71,7 +72,7 @@ const seedData = (): Data => {
         I was part of a small team of 3-4 developers and were located at Gamla Stan in Stockholm, Sweden.`,
       technicalDescription: `React, React-Native and TypeScript. With React we used Redux for state management. 
         For styling we used Semantic Ui. The back-end consists of Node.js and MySQL however i only worked on front-end in this project.`,
-      technologies: [
+      techStack: [
         'React 16',
         'Semantic Ui',
         'Redux',
@@ -99,7 +100,7 @@ const seedData = (): Data => {
       ),
       duration: '3 months',
       thumbnail: projectMyBazarThumbnailImage,
-      sortOrder: 1,
+      sortOrder: 2,
       type: ProjectType.work,
     } as Project,
     {
@@ -109,7 +110,7 @@ const seedData = (): Data => {
         Dohi hosts several news sites and this was one of the systems i was going to manage. 
         My task was to create new minor features and improve quality and performance. The team consisted of two developers and a product owner`,
       technicalDescription: 'Angular and Node.js.',
-      technologies: [
+      techStack: [
         'Angular 5',
         'Node.js',
         'TypeScript',
@@ -129,8 +130,8 @@ const seedData = (): Data => {
         [TagId.angular, TagId.nodeJs, TagId.typeScript].includes(tag.id)
       ),
       duration: '1 month',
-      thumbnail: projectHockeymagasinetThumbnailImageImage,
-      sortOrder: 2,
+      thumbnail: projectHockeymagasinetThumbnailImage,
+      sortOrder: 3,
       type: ProjectType.work,
     } as Project,
     {
@@ -144,7 +145,7 @@ const seedData = (): Data => {
         I also did some minor scripting in SQL. With React we used MobX for state management. For styling we used mainly Material-UI 
         and styled-components for all our component views. For the back-end we used .NET Core. 
         My work was mainly focused on back-end.`,
-      technologies: [
+      techStack: [
         'React 15',
         'MobX',
         'Styled Components',
@@ -173,8 +174,8 @@ const seedData = (): Data => {
         ].includes(tag.id)
       ),
       duration: '5 months',
-      thumbnail: projectHighCoastWhiskyThumbnailImageImage,
-      sortOrder: 3,
+      thumbnail: projectHighCoastWhiskyThumbnailImage,
+      sortOrder: 4,
       type: ProjectType.work,
     } as Project,
     {
@@ -186,7 +187,7 @@ const seedData = (): Data => {
         I also did some scripting in SQL for debugging and various fixes. All the views are rendered in the .NET MVC back-end, 
         the views were created using Razor. JQuery was used in most cases but there are some rare occurences where AngularJs was used. 
         For styling we used Bootstrap.`,
-      technologies: [
+      techStack: [
         '.NET MVC 5',
         'JavaScript',
         'JQuery',
@@ -209,8 +210,8 @@ const seedData = (): Data => {
         ].includes(tag.id)
       ),
       duration: '1 year, 7 months',
-      thumbnail: projectThorengruppenThumbnailImageImage,
-      sortOrder: 4,
+      thumbnail: projectThorengruppenThumbnailImage,
+      sortOrder: 5,
       type: ProjectType.work,
     } as Project,
     {
@@ -225,7 +226,7 @@ const seedData = (): Data => {
         In order for my parser to work with the Agency9's 3D engine I had to convert my parser in Java to Javascript. 
         The purpose was to have a parser on the client side which could support dragging and dropping a COLLADA file into the browser 
         which parses and creates a 3D model which can then be used in their engine.`,
-      technologies: [
+      techStack: [
         'Java SE 8',
         'Google Web Toolkit',
         'JavaScript',
@@ -239,23 +240,29 @@ const seedData = (): Data => {
         [TagId.javaSe, TagId.GWT, TagId.javaScript].includes(tag.id)
       ),
       duration: '7 months',
-      thumbnail: projectAgency9ThumbnailImageImage,
-      sortOrder: 5,
+      thumbnail: projectAgency9ThumbnailImage,
+      sortOrder: 6,
       type: ProjectType.work,
     } as Project,
     {
-      id: ProjectId.agency9,
-      title: 'Agency 9',
-      description: 'desc',
-      technicalDescription: 'tech desc',
-      technologies: ['React 15'],
-      links: [{ text: 'click here', url: 'http://aftonbladet.se' } as Link],
+      id: ProjectId.portfolio,
+      title: 'Portfolio',
+      description: 'My portfolio web page',
+      technicalDescription: 'React and Redux',
+      techStack: [
+        'React 16',
+        'Redux',
+        'Typescript',
+        'Git',
+        'Visual Studio Code',
+        'Windows 10',
+      ],
       tags: tags.filter((tag) =>
-        [TagId.javaSe, TagId.GWT, TagId.javaScript].includes(tag.id)
+        [TagId.react, TagId.redux, TagId.typeScript].includes(tag.id)
       ),
-      duration: '7 months',
-      thumbnail: projectAgency9ThumbnailImageImage,
-      sortOrder: 5,
+      duration: '',
+      thumbnail: projectPortfolioThumbnailImage,
+      sortOrder: 0,
       type: ProjectType.hobby,
     } as Project,
   ]

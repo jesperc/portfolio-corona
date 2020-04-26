@@ -40,7 +40,7 @@ export type Project = {
   title: string
   description: string
   technicalDescription: string
-  technologies: string[]
+  techStack: string[]
   links: Link[]
   thumbnail: string
   tags: Tag[]
@@ -61,5 +61,6 @@ export enum ProjectId {
   highCoastWhisky,
   thorengruppen,
   agency9,
+  portfolio,
   hidden,
 }
