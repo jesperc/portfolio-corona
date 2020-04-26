@@ -30,10 +30,12 @@
     margin-bottom: $padding;
     .link {
       display: table;
+      transform: translateY(calc(#{$paddingHalf} * -1));
 
       .link-icon {
         transform-origin: left;
-        transform: translateY(-2px) translateX(16px) rotate(135deg);
+        transform: translateY(-2px) translateX(calc(#{$paddingHalf} * 1.6))
+          rotate(135deg);
       }
     }
     a {
