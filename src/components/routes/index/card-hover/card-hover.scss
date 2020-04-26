@@ -22,7 +22,7 @@ $hoverTagMargin: calc(#{$paddingHalf} / 3);
     padding: calc(#{$paddingHalf} * 0.6);
     margin: $hoverTagMargin;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 0.9rem;
 
     @include themify($themes) {
       background-color: themed('tagHoverBackgroundColor');

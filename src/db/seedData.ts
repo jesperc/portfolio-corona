@@ -182,7 +182,7 @@ const seedData = (): Data => {
       title: 'Thorengruppen',
       description: `Thorengruppen is a company in the education business which owns around 30 high schools in Sweden. 
         My task was to manage and improve the school platform called Progress. I was a part of a small team of 3-4 developers.`,
-      technicalDescription: `In this project I mainly worked with .NET MVC, Javascript and JQuery. 
+      technicalDescription: `Mainly .NET MVC, Javascript and JQuery. 
         I also did some scripting in SQL for debugging and various fixes. All the views are rendered in the .NET MVC back-end, 
         the views were created using Razor. JQuery was used in most cases but there are some rare occurences where AngularJs was used. 
         For styling we used Bootstrap.`,

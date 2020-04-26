@@ -18,8 +18,8 @@ const Routes: React.FC = () => {
   return (
     <Router>
       <div className={`${theme}`}>
-        <div className="center-overlay">
-          <div className="app">
+        <div className="centered-background">
+          <div className="content">
             <DataLoader />
             <Header />
             <Menu />

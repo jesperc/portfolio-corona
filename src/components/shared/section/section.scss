@@ -43,16 +43,22 @@
     }
   }
 
-  .bullet-list {
-    ul {
-      list-style-type: square;
-      margin-top: $padding;
-      margin-bottom: $padding;
-    }
-    li {
-      margin-left: $padding;
+  .list {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: $paddingHalf;
+
+    .item {
+      padding: $paddingHalf;
+      font-size: 0.9rem;
+      margin-right: $paddingHalf;
       margin-bottom: $paddingHalf;
-      margin-top: $paddingHalf;
+
+      @include themify($themes) {
+        background-color: themed('tagHoverBackgroundColor');
+        color: themed('tagTextColor');
+        box-shadow: themed('boxShadow');
+      }
     }
   }
 }

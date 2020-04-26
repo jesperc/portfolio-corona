@@ -30,7 +30,7 @@ const ProjectView: React.FC<ProjectViewProps> = ({ project }) => {
       {technologies.length > 0 && (
         <Section
           header="Tech stack"
-          bulletList={technologies.sort((a, b) => (a > b ? 1 : -1))}
+          list={technologies.sort((a, b) => (a > b ? 1 : -1))}
         />
       )}
       {links.length > 0 && <Section header="Links" links={links} />}

@@ -21,7 +21,7 @@
       width: calc(#{$thumbnailWidth} - #{$padding});
       padding: calc(#{$paddingHalf} * 0.6);
       margin-top: calc(#{$paddingHalf} / 2);
-      font-size: 16px;
+      font-size: 1rem;
       cursor: pointer;
 
       @include themify($themes) {

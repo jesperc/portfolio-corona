@@ -6,18 +6,18 @@ export interface SectionContainerProps {
   header: string
   links?: Link[]
   paragraphs?: string[]
-  bulletList?: string[]
+  list?: string[]
 }
 
 const SectionContainer: React.FC<SectionContainerProps> = ({
   header,
   links,
   paragraphs,
-  bulletList,
+  list: bulletList,
 }) => {
   const renderLinks = links && links.length > 0
   const renderParagraphs = paragraphs && paragraphs.length > 0
-  const renderBulletList = bulletList && bulletList.length > 0
+  const renderList = bulletList && bulletList.length > 0
 
   return (
     <div className="section">
@@ -44,43 +44,17 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
           ))}
         </div>
       )}
-      {renderBulletList && (
-        <div className="bullet-list">
-          <ul>
-            {bulletList?.map((text: string) => (
-              <li className="item" key={text}>
-                {text}
-              </li>
-            ))}
-          </ul>
+      {renderList && (
+        <div className="list">
+          {bulletList?.map((text: string) => (
+            <div className="item" key={text}>
+              {text}
+            </div>
+          ))}
         </div>
       )}
     </div>
   )
-
-  // {renderLinks && (
-  //   <div className="links">
-  //     <div className="link">
-  //       {}
-  //       <a
-  //         href="https://dizz.se/resources/cv_corell_jesper_english.pdf"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         English
-  //       </a>
-  //     </div>
-  //     <div className="link">
-  //       <a
-  //         href="https://dizz.se/resources/cv_corell_jesper_swedish.pdf"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Svenska
-  //       </a>
-  //     </div>
-  //   </div>
-  // )}
 }
 
 export default SectionContainer
