@@ -20,7 +20,9 @@ const ProjectView: React.FC<ProjectViewProps> = ({ project }) => {
   return (
     <div className="project">
       <h3>{`${title} ${duration.length ? `(${duration})` : ''}`}</h3>
-      <p>{description}</p>
+      {description && description.length > 0 && (
+        <Section header="Project description" paragraphs={[description]} />
+      )}
       {technicalDescription && technicalDescription.length > 0 && (
         <Section header="Tech summary" paragraphs={[technicalDescription]} />
       )}

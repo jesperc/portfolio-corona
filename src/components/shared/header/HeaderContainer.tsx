@@ -1,6 +1,8 @@
 import React from 'react'
 import './header.scss'
 
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+
 const HeaderContainer: React.FC = () => {
   return (
     <div className="header">

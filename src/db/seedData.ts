@@ -272,7 +272,7 @@ const seedData = (): Data => {
       description: `Wåhlins Fastigheter is swedish company that among other things rents out aparments in first hand.
         They select their tenants by randomly picking applicants on their apartments which they put out for sale between 
         13-14 during week days. The ad usually stays up around 30 minutes so you need to be quick to respond.
-        This app checks if a new ad has been uploaded and submits an application automatically.`,
+        This app checks if a new ad has been uploaded and submits an application automatically and stores application info.`,
       technicalDescription: `Node.js app which fetches the new ad web page at Wåhlins every 5 minutes and looks for new entries by digging in the DOM.
         Uses a headless chrome node.js API called Puppeteer to submit an application through a form. Sends notification to a discord server of choice, which is optional.`,
       techStack: [
@@ -284,6 +284,7 @@ const seedData = (): Data => {
         'Windows 10',
         'Raspberry pi',
         'Raspian',
+        'FaunaDB',
       ],
       tags: tags.filter((tag) =>
         [TagId.javaScript, TagId.nodeJs].includes(tag.id)

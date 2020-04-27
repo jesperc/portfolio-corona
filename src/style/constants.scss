@@ -3,3 +3,7 @@ $paddingHalf: calc(#{$padding} / 2);
 $paddingQuarter: calc(#{$padding} / 4);
 $thumbnailWidth: 305px;
 $thumbnailHeight: 199px;
+
+$smallDeviceMax: 649px;
+$mediumDeviceMax: 999px;
+$mediumDeviceMin: 650px;

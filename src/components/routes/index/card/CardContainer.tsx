@@ -39,7 +39,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
         }`}</div>
       </div>
       <Link to={`/project/${id}`}>
-        <img alt="card" src={image} width="305px" height="199px" />
+        <img className="image" alt="card" src={image} />
       </Link>
     </div>
   )

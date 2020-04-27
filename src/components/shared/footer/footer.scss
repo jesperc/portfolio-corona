@@ -12,6 +12,13 @@
   height: calc(#{$padding} * 1.5);
   padding-top: calc(#{$paddingHalf} * 1.5);
 
+  @media (max-width: $mediumDeviceMax) {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    left: 0;
+  }
+
   a {
     text-decoration: none;
 

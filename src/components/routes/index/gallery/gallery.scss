@@ -5,11 +5,17 @@
   padding-bottom: 0;
 
   .cards {
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     margin-top: $padding;
+
+    @media (min-width: $mediumDeviceMin) and (max-width: $mediumDeviceMax) {
+      justify-content: space-evenly;
+    }
+
+    @media (max-width: $smallDeviceMax) {
+      justify-content: center;
+    }
   }
 }
