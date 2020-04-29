@@ -39,7 +39,7 @@ const MenuContainer: React.FC = () => {
     const newTheme: StyleTheme =
       theme === StyleTheme.dark ? StyleTheme.light : StyleTheme.dark
     setItem(LocalStorageKeys.theme, newTheme)
-    dispatch(setTheme(theme))
+    dispatch(setTheme(newTheme))
   }
 
   const theme: StyleTheme = useSelector((state: RootState) => state.theme)
