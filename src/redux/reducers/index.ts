@@ -10,9 +10,9 @@ export interface RootState {
 }
 
 const getThemeFromLocalStorage = () => {
-  return getItem(LocalStorageKeys.theme) === StyleTheme.light
-    ? StyleTheme.light
-    : StyleTheme.dark
+  return getItem(LocalStorageKeys.theme) === StyleTheme.dark
+    ? StyleTheme.dark
+    : StyleTheme.light
 }
 
 const initialState: RootState = {

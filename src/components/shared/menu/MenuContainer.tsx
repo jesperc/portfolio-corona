@@ -35,12 +35,10 @@ const MenuContainer: React.FC = () => {
     }
   }, [dispatch])
 
-  const toggleDarkMode = () => {
-    const theme: StyleTheme =
-      getItem(LocalStorageKeys.theme) === StyleTheme.dark
-        ? StyleTheme.light
-        : StyleTheme.dark
-    setItem(LocalStorageKeys.theme, theme)
+  const toggleDarkMode = (theme: StyleTheme) => {
+    const newTheme: StyleTheme =
+      theme === StyleTheme.dark ? StyleTheme.light : StyleTheme.dark
+    setItem(LocalStorageKeys.theme, newTheme)
     dispatch(setTheme(theme))
   }
 
@@ -70,7 +68,7 @@ const MenuContainer: React.FC = () => {
       {renderListItem(Path.resume, () => (
         <ResumeIcon className="icon" />
       ))}
-      <li className="last-item" onClick={() => toggleDarkMode()}>
+      <li className="last-item" onClick={() => toggleDarkMode(theme)}>
         {theme === StyleTheme.dark ? (
           <LightModeIcon className="icon" />
         ) : (
