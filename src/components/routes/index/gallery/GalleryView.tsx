@@ -32,6 +32,7 @@ const GalleryView: React.FC<GalleryViewProps> = ({
             image={project.thumbnail}
             id={project.id}
             duration={project.duration}
+            disabled={project.disabled}
           />
         ))}
       </div>

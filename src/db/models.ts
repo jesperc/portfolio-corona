@@ -47,6 +47,7 @@ export type Project = {
   duration: string
   sortOrder: number
   type: ProjectType
+  disabled: boolean
 }
 
 export enum ProjectType {

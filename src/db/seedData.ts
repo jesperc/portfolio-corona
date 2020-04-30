@@ -63,6 +63,7 @@ const seedData = (): Data => {
       thumbnail: projectAcademicWorkThumbnailImage,
       sortOrder: 10,
       type: ProjectType.work,
+      disabled: true,
     } as Project,
     {
       id: ProjectId.myBazar,
@@ -102,6 +103,7 @@ const seedData = (): Data => {
       thumbnail: projectMyBazarThumbnailImage,
       sortOrder: 11,
       type: ProjectType.work,
+      disabled: false,
     } as Project,
     {
       id: ProjectId.hockeyMagasinet,
@@ -132,6 +134,7 @@ const seedData = (): Data => {
       thumbnail: projectHockeymagasinetThumbnailImage,
       sortOrder: 12,
       type: ProjectType.work,
+      disabled: false,
     } as Project,
     {
       id: ProjectId.highCoastWhisky,
@@ -175,6 +178,7 @@ const seedData = (): Data => {
       thumbnail: projectHighCoastWhiskyThumbnailImage,
       sortOrder: 13,
       type: ProjectType.work,
+      disabled: false,
     } as Project,
     {
       id: ProjectId.thorengruppen,
@@ -210,6 +214,7 @@ const seedData = (): Data => {
       thumbnail: projectThorengruppenThumbnailImage,
       sortOrder: 14,
       type: ProjectType.work,
+      disabled: false,
     } as Project,
     {
       id: ProjectId.agency9,
@@ -239,6 +244,7 @@ const seedData = (): Data => {
       thumbnail: projectAgency9ThumbnailImage,
       sortOrder: 15,
       type: ProjectType.work,
+      disabled: false,
     } as Project,
     {
       id: ProjectId.portfolio,
@@ -265,6 +271,7 @@ const seedData = (): Data => {
       thumbnail: projectPortfolioThumbnailImage,
       sortOrder: 0,
       type: ProjectType.hobby,
+      disabled: false,
     } as Project,
     {
       id: ProjectId.wahlins,
@@ -299,6 +306,7 @@ const seedData = (): Data => {
       thumbnail: projectWahlinsThumbnailImage,
       sortOrder: 1,
       type: ProjectType.hobby,
+      disabled: false,
     } as Project,
   ]
 

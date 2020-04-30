@@ -10,6 +10,11 @@
   width: $thumbnailWidth;
   height: $thumbnailHeight;
 
+  .disabled {
+    cursor: not-allowed;
+    pointer-events: auto;
+  }
+
   .image {
     width: $thumbnailWidth;
     height: auto;
@@ -27,7 +32,6 @@
       padding: calc(#{$paddingHalf} * 0.6);
       margin-top: calc(#{$paddingHalf} / 2);
       font-size: 1rem;
-      cursor: pointer;
 
       @include themify($themes) {
         background-color: themed('cardTitleBackgroundColor');

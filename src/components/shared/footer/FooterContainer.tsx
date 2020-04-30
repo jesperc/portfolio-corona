@@ -14,12 +14,14 @@ const FooterContainer: React.FC = () => {
       <div className="footer">
         <div className="text">
           {`Made by Jesper Corell ${copyrightSymbol} ${fullYear}`}
-          <a href={linkedInUrl} target="_blank">
-            <LinkedInIcon className="icon footer-icon" />
-          </a>
-          <a href={githubUrl} target="_blank">
-            <GithubIcon className="icon footer-icon github-icon" />
-          </a>
+          <span className="icons">
+            <a href={linkedInUrl} target="_blank">
+              <LinkedInIcon className="icon footer-icon" />
+            </a>
+            <a href={githubUrl} target="_blank">
+              <GithubIcon className="icon footer-icon github-icon" />
+            </a>
+          </span>
         </div>
       </div>
     </div>

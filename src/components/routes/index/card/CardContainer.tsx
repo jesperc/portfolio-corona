@@ -10,6 +10,7 @@ export interface CardContainerProps {
   image: string
   id: ProjectId
   duration: string
+  disabled: boolean
 }
 
 const hiddenStyle: CSSProperties = {
@@ -22,6 +23,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
   image,
   id,
   duration,
+  disabled,
 }) => {
   const [hover, setHover] = useState(false)
 
@@ -32,15 +34,20 @@ const CardContainer: React.FC<CardContainerProps> = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {hover && <CardHover tags={tags.map((tag) => tag.name)} />}
-      <div className="title">
-        <div className="text">{`${title} ${
-          duration && duration.length > 0 ? `(${duration})` : ''
-        }`}</div>
-      </div>
-      <Link to={`/project/${id}`}>
-        <img className="image" alt="card" src={image} />
-      </Link>
+      <span className="disabled">
+        {hover && <CardHover tags={tags.map((tag) => tag.name)} />}
+        <div className="title">
+          <div className="text">{`${title} ${
+            duration && duration.length > 0 ? `(${duration})` : ''
+          }`}</div>
+        </div>
+        {!disabled && (
+          <Link to={`/project/${id}`}>
+            <img className="image" alt="card" src={image} />
+          </Link>
+        )}
+        {disabled && <img className="image" alt="card" src={image} />}
+      </span>
     </div>
   )
 }
