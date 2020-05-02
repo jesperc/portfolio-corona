@@ -24,26 +24,22 @@ const Routes: React.FC = () => {
             <DataLoader />
             <Header />
             <Menu />
+            <ScrollToTop />
             <Switch>
               <Route exact path="/project/:id">
                 <Project />
-                <ScrollToTop />
               </Route>
               <Route exact path="/hobby">
                 <Gallery type={ProjectType.hobby} />
-                <ScrollToTop />
               </Route>
               <Route exact path="/resume">
                 <Resume />
-                <ScrollToTop />
               </Route>
               <Route exact path="/">
                 <Gallery type={ProjectType.work} />
-                <ScrollToTop />
               </Route>
               <Route>
                 <PageNotFound />
-                <ScrollToTop />
               </Route>
             </Switch>
           </div>
