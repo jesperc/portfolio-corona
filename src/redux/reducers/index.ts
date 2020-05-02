@@ -39,7 +39,6 @@ const rootReducer = (
   state: RootState = initialState,
   action: any
 ): RootState => {
-  console.log(action.type)
   if (action.type === DATA_LOADED) {
     const { tags, projects, hobbyProjects } = action.payload
     return {
