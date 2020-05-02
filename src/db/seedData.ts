@@ -256,6 +256,7 @@ const seedData = (): Data => {
         'Redux',
         'Typescript',
         'Visual Studio Code',
+        'Jest',
         'Windows 10',
       ],
       tags: tags.filter((tag) =>
