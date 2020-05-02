@@ -3,6 +3,9 @@ import { Tag, ProjectId } from '../../../../db/models'
 import './card.scss'
 import { Link } from 'react-router-dom'
 import CardHover from '../card-hover'
+import { Path } from '../../../../misc/enums'
+import { setPath } from '../../../../redux/actions'
+import { useDispatch } from 'react-redux'
 
 export interface CardContainerProps {
   title: string
@@ -26,6 +29,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
   disabled,
 }) => {
   const [hover, setHover] = useState(false)
+  const dispatch = useDispatch()
 
   return (
     <div
@@ -42,7 +46,10 @@ const CardContainer: React.FC<CardContainerProps> = ({
           }`}</div>
         </div>
         {!disabled && (
-          <Link to={`/project/${id}`}>
+          <Link
+            to={`/project/${id}`}
+            onClick={() => dispatch(setPath(Path.project))}
+          >
             <img className="image" alt="card" src={image} />
           </Link>
         )}

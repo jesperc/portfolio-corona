@@ -31,6 +31,7 @@
     .link {
       display: table;
       transform: translateY(calc(#{$paddingHalf} * -1));
+      line-height: 1.3;
 
       .link-icon {
         transform-origin: left;

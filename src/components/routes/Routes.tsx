@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/reducers'
 import DataLoader from '../shared/data-loader'
 import { ProjectType } from '../../db/models'
+import ScrollToTop from '../shared/scrollToTop'
 
 const Routes: React.FC = () => {
   let theme = useSelector((state: RootState) => state.theme)
@@ -26,18 +27,23 @@ const Routes: React.FC = () => {
             <Switch>
               <Route exact path="/project/:id">
                 <Project />
+                <ScrollToTop />
               </Route>
               <Route exact path="/hobby">
                 <Gallery type={ProjectType.hobby} />
+                <ScrollToTop />
               </Route>
               <Route exact path="/resume">
                 <Resume />
+                <ScrollToTop />
               </Route>
               <Route exact path="/">
                 <Gallery type={ProjectType.work} />
+                <ScrollToTop />
               </Route>
               <Route>
                 <PageNotFound />
+                <ScrollToTop />
               </Route>
             </Switch>
           </div>

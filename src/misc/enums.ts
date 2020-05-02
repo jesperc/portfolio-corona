@@ -1,6 +1,7 @@
 export enum Path {
   resume = '/resume',
   hobby = '/hobby',
+  project = '/project',
   home = '/',
 }
 

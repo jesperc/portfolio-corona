@@ -1,7 +1,7 @@
-import { DATA_LOADED, SET_THEME } from '../constants/actionTypes'
+import { DATA_LOADED, SET_THEME, SET_PATH } from '../constants/actionTypes'
 import { Data } from '../../db/models'
 import getData from '../../db/getData'
-import { StyleTheme } from '../../misc/enums'
+import { StyleTheme, Path } from '../../misc/enums'
 
 export const fetchData = () => {
   return async (dispatch: any) => {
@@ -27,5 +27,12 @@ export const setTheme = (theme: StyleTheme) => {
   return {
     type: SET_THEME,
     payload: theme,
+  }
+}
+
+export const setPath = (path: Path) => {
+  return {
+    type: SET_PATH,
+    payload: path,
   }
 }
