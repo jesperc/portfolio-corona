@@ -18,6 +18,8 @@ $hoverTagMargin: calc(#{$paddingHalf} / 3);
   }
 
   .tags {
+    margin-left: $paddingHalf;
+    margin-right: $paddingHalf;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
