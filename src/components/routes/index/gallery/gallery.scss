@@ -3,6 +3,7 @@
 .gallery {
   padding: $padding;
   padding-bottom: 0;
+  margin-bottom: $footerHeight;
 
   .cards {
     display: flex;
