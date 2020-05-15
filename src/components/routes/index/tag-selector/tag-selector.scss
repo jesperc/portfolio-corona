@@ -10,16 +10,25 @@
     margin-right: $paddingHalf;
     margin-bottom: $paddingHalf;
     font-weight: bold;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 
     @include themify($themes) {
       color: themed('tagTextColor');
       background-color: themed('tagBackgroundColor');
       text-shadow: themed('textShadow');
       box-shadow: themed('boxShadow');
+      border: 2px solid themed('tagBackgroundColor');
     }
 
     &:hover {
       cursor: pointer;
+      @include themify($themes) {
+        border: 2px solid themed('tagHoverBorderColor');
+      }
     }
   }
 
@@ -28,6 +37,7 @@
 
     @include themify($themes) {
       background-color: themed('tagHoverBackgroundColor');
+      border: 2px solid themed('tagHoverBackgroundColor');
     }
   }
 }
