@@ -6,7 +6,7 @@
 
   .tag {
     display: inline-block;
-    padding: $paddingHalf;
+    padding: calc(#{$paddingHalf} - 2px);
     margin-right: $paddingHalf;
     margin-bottom: $paddingHalf;
     font-weight: bold;
