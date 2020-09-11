@@ -10,12 +10,12 @@ import {
 import {
   projectAcademicWorkThumbnailImage,
   projectMyBazarThumbnailImage,
-  projectHockeymagasinetThumbnailImage,
   projectHighCoastWhiskyThumbnailImage,
   projectThorengruppenThumbnailImage,
   projectAgency9ThumbnailImage,
   projectPortfolioThumbnailImage,
   projectWahlinsThumbnailImage,
+  projectAcneStudiosThumbnailImage,
 } from '../resources/images'
 
 const seedData = (): Data => {
@@ -23,6 +23,7 @@ const seedData = (): Data => {
     { id: TagId.showAll, name: 'Show All', sortOrder: 1 } as Tag,
     { id: TagId.dotNet, name: '.NET', sortOrder: 3 } as Tag,
     { id: TagId.dotNetCore, name: '.NET Core', sortOrder: 2 } as Tag,
+    { id: TagId.azure, name: 'Azure', sortOrder: 3 } as Tag,
     { id: TagId.react, name: 'React', sortOrder: 7 } as Tag,
     { id: TagId.reactNative, name: 'React Native', sortOrder: 8 } as Tag,
     { id: TagId.vue, name: 'Vue', sortOrder: 9 } as Tag,
@@ -37,20 +38,59 @@ const seedData = (): Data => {
     { id: TagId.angular, name: 'Angular', sortOrder: 15 } as Tag,
     { id: TagId.postgreSql, name: 'PostgreSQL', sortOrder: 16 } as Tag,
     { id: TagId.jQuery, name: 'JQuery', sortOrder: 17 } as Tag,
-    { id: TagId.GWT, name: 'GWT', sortOrder: 18 } as Tag,
   ]
 
   const projects: Project[] = [
     {
-      id: ProjectId.academicWork,
-      title: 'Academic Work',
+      id: ProjectId.acneStudios,
+      title: 'Acne Studios',
       description: '',
       technicalDescription: '',
       techStack: [],
       links: [],
       tags: tags.filter((tag) =>
+        [TagId.azure, TagId.dotNetCore, TagId.sqlServer].includes(tag.id)
+      ),
+      duration: 'Ongoing',
+      thumbnail: projectAcneStudiosThumbnailImage,
+      sortOrder: 9,
+      type: ProjectType.work,
+      disabled: true,
+    } as Project,
+    {
+      id: ProjectId.academicWork,
+      title: 'Academic Work',
+      description: `Academic Work is a staffing and recruitment company, focusing on offering jobs for students or young professionals in 
+        the beginnings of their career.
+        I was part of a team consisting of a mix of fullstack developers, ux, qa and a product owner. I was mostly responsible for maintaining and
+        developing new features for the external web, consisting of several web apps and several api's which were coded in .Net Core in the
+        backend and Vue in the frontend. The last year of my employment i was mainly doing various apps in node.js and some React.`,
+      technicalDescription: `.Net Core for our API's and web apps and Vue for frontend, SQL database. All our apps are hosted on Azure so I was also part of mainting 
+        build pipelines as well as various tasks in the Azure portal.`,
+      techStack: [
+        '.NET Core',
+        'Vue',
+        'React 16',
+        'Azure',
+        'Redux',
+        'Typescript',
+        'Node.js',
+        'SQL Server Management Studio',
+        'Docker',
+        'OS X',
+        'Visual Studio Code',
+        'Visual Studio 2019',
+      ],
+      links: [
+        {
+          text: 'Job search portal',
+          url: 'https://jobs.academicwork.se',
+        } as Link,
+      ],
+      tags: tags.filter((tag) =>
         [
           TagId.vue,
+          TagId.azure,
           TagId.react,
           TagId.nodeJs,
           TagId.dotNetCore,
@@ -59,11 +99,11 @@ const seedData = (): Data => {
           TagId.redux,
         ].includes(tag.id)
       ),
-      duration: 'Ongoing',
+      duration: '2 years, 3 months',
       thumbnail: projectAcademicWorkThumbnailImage,
       sortOrder: 10,
       type: ProjectType.work,
-      disabled: true,
+      disabled: false,
     } as Project,
     {
       id: ProjectId.myBazar,
@@ -105,37 +145,36 @@ const seedData = (): Data => {
       type: ProjectType.work,
       disabled: false,
     } as Project,
-    {
-      id: ProjectId.hockeyMagasinet,
-      title: 'Hockeymagasinet',
-      description: `Hockeymagasinet is a swedish news site for ice hockey. This was my "in between" project when I was working as a consultant for Dohi. 
-        Dohi hosts several news sites and this was one of the systems i was going to manage. 
-        My task was to create new minor features and improve quality and performance. The team consisted of two developers and a product owner`,
-      technicalDescription: 'Angular and Node.js.',
-      techStack: [
-        'Angular 5',
-        'Node.js',
-        'TypeScript',
-        'Windows 10',
-        'Ubuntu',
-        'Visual Studio Code',
-      ],
-      links: [
-        {
-          text: 'Hockeymagasinet',
-          url: 'https://www.hockeymagasinet.com/home',
-        } as Link,
-      ],
-      images: [''],
-      tags: tags.filter((tag) =>
-        [TagId.angular, TagId.nodeJs, TagId.typeScript].includes(tag.id)
-      ),
-      duration: '1 month',
-      thumbnail: projectHockeymagasinetThumbnailImage,
-      sortOrder: 12,
-      type: ProjectType.work,
-      disabled: false,
-    } as Project,
+    // {
+    //   id: ProjectId.hockeyMagasinet,
+    //   title: 'Hockeymagasinet',
+    //   description: `Hockeymagasinet is a swedish news site for ice hockey. This was my "in between" project when I was working as a consultant for Dohi.
+    //     Dohi hosts several news sites and this was one of the systems i was going to manage.
+    //     My task was to create new minor features and improve quality and performance. The team consisted of two developers and a product owner`,
+    //   technicalDescription: 'Angular and Node.js.',
+    //   techStack: [
+    //     'Angular 5',
+    //     'Node.js',
+    //     'TypeScript',
+    //     'Windows 10',
+    //     'Visual Studio Code',
+    //   ],
+    //   links: [
+    //     {
+    //       text: 'Hockeymagasinet',
+    //       url: 'https://www.hockeymagasinet.com/home',
+    //     } as Link,
+    //   ],
+    //   images: [''],
+    //   tags: tags.filter((tag) =>
+    //     [TagId.angular, TagId.nodeJs, TagId.typeScript].includes(tag.id)
+    //   ),
+    //   duration: '1 month',
+    //   thumbnail: projectHockeymagasinetThumbnailImage,
+    //   sortOrder: 12,
+    //   type: ProjectType.work,
+    //   disabled: false,
+    // } as Project,
     {
       id: ProjectId.highCoastWhisky,
       title: 'High Coast Whisky',
@@ -156,8 +195,6 @@ const seedData = (): Data => {
         'TypeScript',
         'PostgreSQL',
         'Visual Studio Code',
-        'Windows 10',
-        'Ubuntu',
       ],
       links: [
         {
@@ -198,7 +235,6 @@ const seedData = (): Data => {
         'Bootstrap',
         'Sharepoint',
         'Visual Studio',
-        'Windows 10',
       ],
       links: [],
       tags: tags.filter((tag) =>
@@ -238,7 +274,7 @@ const seedData = (): Data => {
       ],
       links: [{ text: 'Agency9', url: 'https://agency9.com/' } as Link],
       tags: tags.filter((tag) =>
-        [TagId.javaSe, TagId.GWT, TagId.javaScript].includes(tag.id)
+        [TagId.javaSe, TagId.javaScript].includes(tag.id)
       ),
       duration: '7 months',
       thumbnail: projectAgency9ThumbnailImage,
@@ -257,7 +293,6 @@ const seedData = (): Data => {
         'Typescript',
         'Visual Studio Code',
         'Jest',
-        'Windows 10',
       ],
       tags: tags.filter((tag) =>
         [TagId.react, TagId.redux, TagId.typeScript].includes(tag.id)

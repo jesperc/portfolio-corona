@@ -21,6 +21,7 @@ export enum TagId {
   react,
   reactNative,
   vue,
+  azure,
   typeScript,
   javaScript,
   sqlServer,
@@ -32,7 +33,6 @@ export enum TagId {
   mobX,
   postgreSql,
   jQuery,
-  GWT,
 }
 
 export type Project = {
@@ -56,6 +56,7 @@ export enum ProjectType {
 }
 
 export enum ProjectId {
+  acneStudios,
   academicWork,
   myBazar,
   hockeyMagasinet,
