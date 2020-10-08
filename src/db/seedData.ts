@@ -31,12 +31,10 @@ const seedData = (): Data => {
     { id: TagId.javaScript, name: 'Javascript', sortOrder: 5 } as Tag,
     { id: TagId.sqlServer, name: 'SQL Server', sortOrder: 12 } as Tag,
     { id: TagId.redux, name: 'Redux', sortOrder: 10 } as Tag,
-    { id: TagId.mobX, name: 'MobX', sortOrder: 11 } as Tag,
-    { id: TagId.nodeJs, name: 'Node.js', sortOrder: 6 } as Tag,
+    { id: TagId.node, name: 'Node', sortOrder: 6 } as Tag,
     { id: TagId.javaSe, name: 'Java SE', sortOrder: 13 } as Tag,
     { id: TagId.android, name: 'Android', sortOrder: 14 } as Tag,
     { id: TagId.angular, name: 'Angular', sortOrder: 15 } as Tag,
-    { id: TagId.postgreSql, name: 'PostgreSQL', sortOrder: 16 } as Tag,
     { id: TagId.jQuery, name: 'JQuery', sortOrder: 17 } as Tag,
   ]
 
@@ -64,7 +62,7 @@ const seedData = (): Data => {
         the beginnings of their career.
         I was part of a team consisting of a mix of fullstack developers, ux, qa and a product owner. I was mostly responsible for maintaining and
         developing new features for the external web, consisting of several web apps and several api's which were coded in .Net Core in the
-        backend and Vue in the frontend. The last year of my employment i was mainly doing various apps in node.js and some React.`,
+        backend and Vue in the frontend. The last year of my employment i was mainly doing various apps in Node and some React.`,
       technicalDescription: `.Net Core for our API's and web apps and Vue for frontend, SQL database. All our apps are hosted on Azure so I was also part of mainting 
         build pipelines as well as various tasks in the Azure portal.`,
       techStack: [
@@ -74,7 +72,7 @@ const seedData = (): Data => {
         'Azure',
         'Redux',
         'Typescript',
-        'Node.js',
+        'Node',
         'SQL Server Management Studio',
         'Docker',
         'OS X',
@@ -92,7 +90,7 @@ const seedData = (): Data => {
           TagId.vue,
           TagId.azure,
           TagId.react,
-          TagId.nodeJs,
+          TagId.node,
           TagId.dotNetCore,
           TagId.typeScript,
           TagId.sqlServer,
@@ -113,7 +111,7 @@ const seedData = (): Data => {
         My task was to implement new features such as localization and social features for the web and the apps. 
         I was part of a small team of 3-4 developers and were located at Gamla Stan in Stockholm, Sweden.`,
       technicalDescription: `React, React-Native and TypeScript. With React we used Redux for state management. 
-        For styling we used Semantic Ui. The back-end consists of Node.js and MySQL however i only worked on front-end in this project.`,
+        For styling we used Semantic Ui. The back-end consists of Node and MySQL however i only worked on front-end in this project.`,
       techStack: [
         'React 16',
         'Semantic Ui',
@@ -183,12 +181,11 @@ const seedData = (): Data => {
         My task was to create new features, fix bugs, manage integrations etc. 
         I was a part of a small team of 2-3 developers and a UX designer.`,
       technicalDescription: `React, TypeScript and .NET Core. 
-        I also did some minor scripting in SQL. With React we used MobX for state management. For styling we used mainly Material-UI 
+        I also did some minor scripting in SQL.a For styling we used mainly Material-UI 
         and styled-components for all our component views. For the back-end we used .NET Core. 
         My work was mainly focused on back-end.`,
       techStack: [
         'React 15',
-        'MobX',
         'Styled Components',
         'Material-ui',
         '.NET Core 1.1',
@@ -203,13 +200,7 @@ const seedData = (): Data => {
         } as Link,
       ],
       tags: tags.filter((tag) =>
-        [
-          TagId.dotNetCore,
-          TagId.react,
-          TagId.mobX,
-          TagId.typeScript,
-          TagId.postgreSql,
-        ].includes(tag.id)
+        [TagId.dotNetCore, TagId.react, TagId.typeScript].includes(tag.id)
       ),
       duration: '5 months',
       thumbnail: projectHighCoastWhiskyThumbnailImage,
@@ -316,11 +307,11 @@ const seedData = (): Data => {
         They select their tenants by randomly picking applicants on their apartments which they put out for sale between 
         13-14 during week days. The ad usually stays up around 30 minutes so you need to be quick to respond.
         This app checks if a new ad has been uploaded and submits an application automatically and stores application info.`,
-      technicalDescription: `Node.js app which fetches the new ad web page at Wåhlins every 5 minutes and looks for new entries by digging in the DOM.
-        Uses a headless chrome node.js API called Puppeteer to submit an application through a form. Sends notification to a discord server of choice, which is optional.`,
+      technicalDescription: `Node app which fetches the new ad web page at Wåhlins every 5 minutes and looks for new entries by digging in the DOM.
+        Uses a headless Chrome Node API called Puppeteer to submit an application through a form. Sends notification to a discord server of choice, which is optional.`,
       techStack: [
         'Puppeteer',
-        'Node.js',
+        'Node',
         'Javascript',
         'Jest',
         'Visual Studio Code',
@@ -330,7 +321,7 @@ const seedData = (): Data => {
         'FaunaDB',
       ],
       tags: tags.filter((tag) =>
-        [TagId.javaScript, TagId.nodeJs].includes(tag.id)
+        [TagId.javaScript, TagId.node].includes(tag.id)
       ),
       links: [
         {

@@ -26,12 +26,10 @@ export enum TagId {
   javaScript,
   sqlServer,
   redux,
-  nodeJs,
+  node,
   javaSe,
   android,
   angular,
-  mobX,
-  postgreSql,
   jQuery,
 }
 
